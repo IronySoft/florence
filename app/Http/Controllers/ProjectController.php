@@ -59,7 +59,7 @@ class ProjectController extends Controller
 
     public function show($id)
     {
-        //
+        return view('admin.projects.show', ['project'=>Project::find($id)]);
     }
 
     /**
@@ -82,7 +82,46 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = Project::find($id);
+
+
+        if ($request->hasFile('image')){
+
+            unlink($project->image);
+            unlink($project->large_image);
+
+            $image = $request->file('image');
+            $imageName = time() .'_'.$image->getClientOriginalName();
+
+            $large_image = $request->file('image');
+            $large_imageName = time() . '_' . $large_image->getClientOriginalName();
+            $directory = 'images/thumbs/';
+            $large_directory = 'images/full/';
+
+            $imageUrl = $directory . $imageName;
+            $large_imageUrl = $large_directory . $large_imageName;
+
+            Image::make($image)->resize(570, 400)->save($imageUrl);
+            Image::make($image)->resize(900, 632)->save($large_imageUrl);
+
+
+            $project->title = $request->title;
+            $project->description = $request->description;
+            $project->large_image = $large_imageUrl;
+            $project->image = $imageUrl;
+
+
+        }else{
+
+            $project->title = $request->title;;
+            $project->description = $request->description;
+
+        }
+
+        $project->update();
+
+        return redirect(route('project.index'))->with(['message'=>' Project for Home Page updated Successfully']);
+
     }
 
     /**
@@ -93,6 +132,8 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+       Project::destroy($id);
+        return redirect(route('project.index'))->with(['message'=>' Project for Home Page DELETED Successfully']);
+
     }
 }

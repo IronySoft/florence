@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\AboutUs;
+use App\Blog;
 use App\Course;
 use App\FlorenceTeam;
 use App\MissionVision;
 use App\Project;
 use App\Slider;
 use App\Testimonial;
+use App\Text;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +18,12 @@ class ViewController extends Controller
 {
     public function index()
     {
-        return view('front.home.index', ['sliders' => Slider::all(), 'projects' => DB::table('projects')->paginate(1)]);
+        return view('front.home.index', [
+            'sliders' => Slider::all(),
+            'text' => Text::all()->where('id','=',1),
+            'projects' => DB::table('projects')->paginate(1),
+
+            ]);
     }
 
     public function index2()
@@ -26,7 +33,7 @@ class ViewController extends Controller
 
     public function blogIndex()
     {
-        return view('front.blog.index');
+        return view('front.blog.index', ['blogs'=>Blog::paginate(5)]);
     }
 
     public function contactIndex()

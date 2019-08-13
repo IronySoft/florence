@@ -11,7 +11,6 @@
     <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700"
           rel="stylesheet">
-
     <link href="{{asset('/')}}front/css/bootstrap.css" rel="stylesheet"/>
     <link href="{{asset('/')}}front/css/bootstrap-responsive.css" rel="stylesheet"/>
     <link href="{{asset('/')}}front/css/fancybox/jquery.fancybox.css" rel="stylesheet">
@@ -32,22 +31,20 @@
     <script src="{{asset('/')}}front/js/jquery.js"></script>
 
     <style>
-        #wrapper
-        {
-            position:relative;
-            top:100px;
+        #wrapper {
+            position: relative;
+            top: 100px;
 
         }
 
-        .footer
-        {
+        .footer {
             background-color: #FDFE02;
 
         }
 
         .big_header {
 
-            top:0px;
+            top: 0px;
             position: fixed;
             width: 100%;
             background-color: #FDFE02;
@@ -60,6 +57,10 @@
         .sticky_header {
             /*font-size: 6px;*/
         }
+
+        .mydanger {
+            color: #fe1f28;
+        }
     </style>
 </head>
 
@@ -71,9 +72,11 @@
             <div class="row">
                 <div class="span12">
                     <ul>
-                        <li><strong>We are available for any custom works this month</strong></li>
-                        <li>Main office: Springville center X264, Park Ave S.01</li>
-                        <li>Call us <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891</li>
+                        @foreach($address as $row)
+                            <li><strong>Our Course is available for any month</strong></li>
+                            <li>{{$row->address}}</li>
+                            <li>Call us <i class="icon-phone"></i> ({{$row->phone1}})- ({{$row->phone2}})</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -110,8 +113,6 @@
 
 <!-- Template Custom JavaScript File -->
 <script src="{{asset('/')}}front/js/custom.js"></script>
-
-
 
 </body>
 </html>

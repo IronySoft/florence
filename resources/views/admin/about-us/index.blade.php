@@ -15,16 +15,23 @@
 
         <tbody>
 
-            @foreach($abouts as $project)
+        @php($i=1)
+            @foreach($abouts as $about)
                 <tr>
-                    <th scope="row">1</th>
-                    <td>{{$project->description}}</td>
+                    <th scope="row">{{$i++}}</th>
+                    <td>{{$about->description}}</td>
                     <td>
-                        <img src="{{asset($project->image)}}" height="50" width="50">
+                        <img src="{{asset($about->image)}}" height="50" width="50">
                     </td>
                     <td>
-                        <a href="#">Edit</a>
-                        <a href="#">Delete</a>
+                        <a href="{{route('about.show',['about'=>$about->id])}}">Edit</a>
+
+                        <form method="post" action="{{route('about.destroy',['about'=>$about->id])}}">
+
+                            @csrf
+                            @method('delete')
+                            <button type="submit">Delete</button>
+                        </form>
                     </td>
 
                 </tr>

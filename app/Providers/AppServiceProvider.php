@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //Schema::defaultStringLength(191);
-        View()->composer('front.includes.footer', function ($view) {
+        View()->composer('*', function ($view) {
             $view->with('address', Address::all()->where('id','=',1));
         });
 //        View::composer('front.includes.footer', function ($view) {

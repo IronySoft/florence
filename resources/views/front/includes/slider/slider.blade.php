@@ -4,17 +4,20 @@
     <div id="nivo-slider">
         <div class="nivo-slider">
             <!-- Slide #1 image -->
-        @php($i=1)
-        @foreach($sliders as $slider)
+            @php($i=1)
+            @foreach($sliders as $slider)
                 <img src="{{asset($slider->image)}}" alt="" title="#caption-{{$i++}}"/>
             @endforeach
 
         </div>
-        <p > <marquee ><h1 class="text text-danger">২০১৯-২০ সেশনে এককালীন  বিশেষ ছাড়ে ভর্তি চলছে . . .</h1></marquee></p>
-
+        @foreach($text as $row)
+            <p>
+                <marquee><h1 class="mydanger">{{$row->text}}</h1></marquee>
+            </p>
+        @endforeach
         <div class="container ">
             <div class="row">
-                <div class="span12 " >
+                <div class="span12 ">
                     @php($i=1)
                     @foreach($sliders as $slider)
                         <div class="nivo-caption" id="caption-{{$i++}}">

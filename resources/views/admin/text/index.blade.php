@@ -6,9 +6,8 @@
         <thead>
         <tr>
             <th scope="col">#SL</th>
-            <th scope="col">Name</th>
-            <th scope="col">Duration</th>
-            <th scope="col">Total Fees</th>
+
+            <th scope="col">Walking Notice</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -16,12 +15,10 @@
 
         <tbody>
         @php($i=1)
-        @foreach($courses as $project)
+        @foreach($texts as $text)
             <tr>
                 <th scope="row">{{$i++}}</th>
-                <td>{{$project->first_name}} {{$project->last_name}}</td>
-                <td>{{$project->month_number}} months </td>
-                <td>{{$project->month_number * $project->fee}} tk. </td>
+                <td>{{$text->text}}</td>
 
                 <td>
                     <a href="#">Edit</a>
@@ -30,7 +27,6 @@
 
             </tr>
         @endforeach
-
 
         </tbody>
     </table>

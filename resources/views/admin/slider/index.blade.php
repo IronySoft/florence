@@ -16,10 +16,11 @@
 
 
         <tbody>
+        @php($i=1)
         @if($sliders)
             @foreach($sliders as $slider)
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{$i++}}</th>
                     <td>{{$slider->first_title}}</td>
                     <td>{{$slider->last_title}}</td>
                     <td>{{$slider->description}}</td>
@@ -27,8 +28,15 @@
                         <img src="{{asset($slider->image)}}" height="50" width="50">
                     </td>
                     <td>
-                        <a href="#">Edit</a>
-                        <a href="#">Delete</a>
+                        <a href="{{route('slider.show',['slider'=>$slider->id])}}">Edit</a>
+                        <form method="post" action="{{route('slider.destroy',['slider'=>$slider->id])}}">
+
+                            @csrf
+                            @method('delete')
+                            <button type="submit">Delete</button>
+                        </form>
+
+
                     </td>
 
                 </tr>

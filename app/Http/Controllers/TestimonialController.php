@@ -45,48 +45,59 @@ class TestimonialController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        return view('admin.testimonial.show', ['testimonial'=> Testimonial::find($id)]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        $testimonial = Testimonial::find($id);
+
+        if ($request->hasFile('image')){
+
+            unlink($testimonial->image);
+
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $directory = 'images/testimonial/';
+            $imageUrl = $directory . $imageName;
+            Image::make($image)->resize(50, 50)->save($imageUrl);
+
+
+
+            $testimonial->author_name = $request->author_name;
+            $testimonial->speech = $request->speech;
+            $testimonial->designation = $request->designation;
+            $testimonial->image = $imageUrl;
+
+
+        }else{
+
+            $testimonial->author_name = $request->author_name;
+            $testimonial->speech = $request->speech;
+            $testimonial->designation = $request->designation;
+        }
+
+
+        $testimonial->update();
+        return redirect(route('testimonial.index'))->with(['message'=>' testimonial updated Successfully']);
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        //
+        Testimonial::destroy($id);
+        return redirect(route('testimonial.index'))->with(['message' => 'Testimonial deleted Successfully']);
+
     }
 }

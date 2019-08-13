@@ -15,18 +15,23 @@
 
 
         <tbody>
-
-        @foreach($florenceTeams as $project)
+        @php($i=1)
+        @foreach($florenceTeams as $florence)
             <tr>
-                <th scope="row">1</th>
-                <td>{{$project->name}}</td>
-                <td>{{$project->designation}}</td>
+                <th scope="row">{{$i++}}</th>
+                <td>{{$florence->name}}</td>
+                <td>{{$florence->designation}}</td>
                 <td>
                     <img src="{{asset($project->image)}}" height="50" width="50">
                 </td>
                 <td>
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
+                    <a href="{{route('florence.show',['florence'=>$florence->id])}}">Edit</a>
+                    <form method="post" action="{{route('florence.destroy',['florence'=>$florence->id])}}">
+
+                        @csrf
+                        @method('delete')
+                        <button type="submit">Delete</button>
+                    </form>
                 </td>
 
             </tr>

@@ -26,28 +26,30 @@
                 <div class="span8">
                     <article>
                         <div class="row">
+                            @foreach($blogs as $blog)
 
                             <div class="span8">
                                 <div class="post-image">
                                     <div class="post-heading">
-                                        <h3><a href="#">This is an example of standard post format</a></h3>
+                                        <h3><a href="#">{{$blog->title}}</a></h3>
                                     </div>
-                                    <img src="{{asset('/')}}front/img/dummies/blog/img1.jpg" alt="" />
+                                    <img src="{{asset($blog->image)}}" alt="" />
                                 </div>
                                 <p>
-                                    Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
-                                    ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed.
+                                    {{$blog->description}}
                                 </p>
                                 <div class="bottom-article">
                                     <ul class="meta-post">
-                                        <li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
-                                        <li><i class="icon-user"></i><a href="#"> Admin</a></li>
+                                        <li><i class="icon-calendar"></i><a href="#"> {{$blog->created_at}}</a></li>
+                                        <li><i class="icon-user"></i><a href="#">posted by: {{$blog->writer}}</a></li>
                                         <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
                                         <li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
                                     </ul>
-                                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100006495202618" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+                                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100006495202618" class="pull-right">Chat<i class="icon-angle-right"></i></a>
                                 </div>
                             </div>
+                            @endforeach
+
                         </div>
                     </article>
 

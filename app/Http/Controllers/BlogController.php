@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Image;
 class BlogController extends Controller
 {
     public function index()
@@ -23,20 +24,29 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
-        return $request;
         $this->validate($request, [
-            'name' => 'required',
             'title' => 'required',
-            'phone1' => 'required',
-            'phone2' => 'required',
-            'address' => 'required',
-            'email' => 'required|email',
-        ]);
+            'description' => 'required',
+            'image' => 'required',
 
-        Address::create($request->all());
-        return redirect(route('address.index'))->with(['message' => 'Address added Successfully']);
+        ]);
+        $image = $request->file('image');
+        $imageName = time() . '_' . $image->getClientOriginalName();
+        $directory = 'images/blog/';
+        $imageUrl = $directory . $imageName;
+        Image::make($image)->resize(870, 350)->save($imageUrl);
+
+        $row = new Blog();
+        $row->writer = Auth::user()->name;
+        $row->title = $request->title;
+        $row->description = $request->description;
+        $row->image = $imageUrl;
+        $row->save();
+
+        return redirect(route('blog.index'))->with(['message' => 'Blog added Successfully']);
 
     }
+
     public function show(Blog $blog)
     {
         //
@@ -45,7 +55,7 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Blog $blog
      * @return \Illuminate\Http\Response
      */
     public function edit(Blog $blog)
@@ -56,8 +66,8 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Blog  $blog
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Blog $blog
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Blog $blog)
@@ -68,7 +78,7 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Blog $blog
      * @return \Illuminate\Http\Response
      */
     public function destroy(Blog $blog)

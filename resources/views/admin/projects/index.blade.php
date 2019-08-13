@@ -18,15 +18,21 @@
         @if($projects)
             @foreach($projects as $project)
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{$i++}}</th>
                     <td>{{$project->title}}</td>
                     <td>{{$project->description}}</td>
                     <td>
                         <img src="{{asset($project->image)}}" height="50" width="50">
                     </td>
                     <td>
-                        <a href="#">Editt</a>
-                        <a href="#">Delete</a>
+                        <a href="{{route('project.show',['project'=>$project->id])}}">Edit</a>
+
+                        <form method="post" action="{{route('project.destroy',['project'=>$project->id])}}">
+
+                            @csrf
+                            @method('delete')
+                            <button type="submit">Delete</button>
+                        </form>
                     </td>
 
                 </tr>

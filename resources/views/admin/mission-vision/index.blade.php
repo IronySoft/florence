@@ -14,7 +14,7 @@
 
 
         <tbody>
-
+        @php($i=1)
         @foreach($goals as $project)
             <tr>
                 <th scope="row">1</th>

@@ -252,41 +252,33 @@
 
                     </ul>
                 </li>
-
-
-
-                <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fa fa-dashboard"></i>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon"></i>
                         <p>
-                            Starter Pages
-                            <i class="right fa fa-angle-left"></i>
+                            Walking text (home)
+                            <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="{{route('text.create')}}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Active Page</p>
+                                <p>Add New Text</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('text.index')}}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Inactive Page</p>
+                                <p>Manage older Text </p>
                             </a>
                         </li>
+
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-th"></i>
-                        <p>
-                            Simple Link
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
-                </li>
+
+
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

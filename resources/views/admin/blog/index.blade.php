@@ -14,10 +14,10 @@
 
 
         <tbody>
-
+        @php($i=1)
         @foreach($blogs as $project)
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{$i++}}</th>
                 <td>{{$project->description}}</td>
                 <td>
                     <img src="{{asset($project->image)}}" height="50" width="50">

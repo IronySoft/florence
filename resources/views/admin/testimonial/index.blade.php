@@ -16,10 +16,10 @@
 
 
         <tbody>
-
+        @php($i=1)
             @foreach($testimonials as $testimonial)
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{$i++}}</th>
                     <td>{{$testimonial->author_name}}</td>
                     <td>{{$testimonial->speech}}</td>
                     <td>{{$testimonial->designation}}</td>
@@ -27,8 +27,13 @@
                         <img src="{{asset($testimonial->image)}}" height="50" width="50">
                     </td>
                     <td>
-                        <a href="#">Edit</a>
-                        <a href="#">Delete</a>
+                        <a href="{{route('testimonial.show',['testimonial'=>$testimonial->id])}}">Edit</a>
+                        <form method="post" action="{{route('testimonial.destroy',['testimonial'=>$testimonial->id])}}">
+
+                            @csrf
+                            @method('delete')
+                            <button type="submit">Delete</button>
+                        </form>
                     </td>
 
                 </tr>

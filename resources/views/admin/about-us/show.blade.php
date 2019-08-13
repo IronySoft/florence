@@ -8,19 +8,21 @@
                 <h3 class="card-title">About Example</h3>
             </div>
 
-            <form action="{{route('blog.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('about.update',['about'=> $about->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
+                @method('put')
                 <div class="card-body">
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
-                        <input type="text" required class="form-control" name="title">
-                        <span class="text-danger">{{$errors->has('title')? $errors->First('title'): ''}}</span>
+                        <label for="exampleInputEmail1">Description of About Us</label>
+                        <textarea class="form-control" name="description"> {{$about->description}}</textarea>
 
                     </div>
 
+
+
                     <div class="form-group">
-                        <label for="exampleInputFile">Blog Image</label>
+                        <label for="exampleInputFile">Photos which Describe Us</label>
                         <div class="input-group">
                             <div class="custom-file">
                                 <input name="image" type="file" class="custom-file-input" id="exampleInputFile">
@@ -31,23 +33,13 @@
                                 <span class="input-group-text" id="">Upload</span>
                             </div>
                         </div>
-                        <span class="text-danger">{{$errors->has('image')? $errors->First('image'): ''}}</span>
+                        <img src="{{asset($about->image)}}" width="200" height="200">
                     </div>
-
-
-
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Description</label>
-                        <textarea class="form-control" name="description"> </textarea>
-                        <span class="text-danger">{{$errors->has('description')? $errors->First('description'): ''}}</span>
-
-                    </div>
-
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-success btn-block">Update Info</button>
                 </div>
             </form>
         </div>
