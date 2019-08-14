@@ -1,4 +1,5 @@
 @extends('front.master')
+@section('title', 'Contact | Florence Nursing Center')
 @section('body')
 
     <section id="content">

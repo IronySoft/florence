@@ -259,6 +259,30 @@
 
                     </ul>
                 </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon"></i>
+                        <p>
+                            Publication Page
+                            <i class="fa fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('notice.create')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-danger"></i>
+                                <p>Add New Notice</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('notice.index')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-danger"></i>
+                                <p>Manage Notice List</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
 
 
             </ul>

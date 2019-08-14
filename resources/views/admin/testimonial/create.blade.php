@@ -22,7 +22,7 @@
 
                     <div class="form-group">
                         <label>Speech</label>
-                        <textarea class="form-control" name="speech"> </textarea>
+                        <textarea id="editor1" class="form-control" name="speech"> </textarea>
                         <span class="text-danger">{{$errors->has('speech')? $errors->First('speech'): ''}}</span>
 
                     </div>

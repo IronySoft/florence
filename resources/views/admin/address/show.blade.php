@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Address</label>
-                        <textarea class="form-control" name="address">{{$our_address->address}} </textarea>
+                        <textarea id="editor1" class="form-control" name="address">{{$our_address->address}} </textarea>
                         <span class="text-danger">{{$errors->has('address')? $errors->First('address'): ''}}</span>
 
                     </div>

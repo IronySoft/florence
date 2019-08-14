@@ -34,7 +34,7 @@
 
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" name="description">{{$slider->description}} </textarea>
+                        <textarea id="editor1" class="form-control" name="description">{{$slider->description}} </textarea>
                         <span class="text-danger">{{$errors->has('description')? $errors->First('description'): ''}}</span>
 
                     </div>

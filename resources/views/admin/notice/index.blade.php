@@ -6,8 +6,11 @@
         <thead>
         <tr>
             <th scope="col">#SL</th>
-            <th scope="col">Title Name of Goal</th>
+            <th scope="col">Title</th>
             <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Location</th>
+            <th scope="col">Type</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -15,16 +18,22 @@
 
         <tbody>
         @php($i=1)
-        @foreach($goals as $goal)
+        @foreach($notices as $notice)
             <tr>
                 <th scope="row">{{$i++}}</th>
-                <td>{{$goal->title}}</td>
-                <td>{{$goal->description}}</td>
+                <td>{{$notice->title}}</td>
+                <td>{{$notice->description}}</td>
+                <td>{{$notice->price}}</td>
+                <td>{{$notice->location}}</td>
+                <td>
+                    <img src="{{asset($notice->image)}}" width="100" height="100">
+                </td>
+                <td>{{$notice->type==1?'Book':'Others'}}</td>
 
                 <td>
-                    <a class="btn btn-secondary" href="{{route('goal.show',['goal'=>$goal->id])}}">Edit</a>
+                    <a class="btn btn-secondary" href="{{route('notice.show',['goal'=>$notice->id])}}">Edit</a>
 
-                    <form method="post" action="{{route('goal.destroy',['goal'=>$goal->id])}}">
+                    <form method="post" action="{{route('notice.destroy',['notice'=>$notice->id])}}">
 
                         @csrf
                         @method('delete')

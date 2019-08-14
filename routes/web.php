@@ -15,12 +15,20 @@ Route::resource('view', 'ViewController');
 
 
 Route::get('/', 'ViewController@index')->name('/');
+
 Route::get('/index2', 'ViewController@index2')->name('index.type2');
+
 Route::get('view-blog', 'ViewController@blogIndex')->name('view.blog.index');
+
 //Route::get('contact', 'ViewController@contactIndex')->name('contact.index');
 Route::get('view-about', 'ViewController@aboutIndex')->name('view.about.index');
+
 Route::get('view-course', 'ViewController@courseIndex')->name('view.course.index');
+
 Route::get('view-testimonial', 'ViewController@testimonialIndex')->name('view.testimonial.index');
+
+Route::get('view-notice', 'ViewController@noticeIndex')->name('view.notice.index');
+
 Route::get('gallery', 'ViewController@galleryIndex')->name('gallery.index');
 
 //Route::get('view-admission', 'ViewController@admissionIndex')->name('view.admission.index');
@@ -61,6 +69,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('florence', 'FlorenceTeamController');
 
     Route::resource('student', 'StudentController');
+
+    Route::resource('notice', 'NoticeController');
 
 //
 //    Route::get('florence-index', 'AboutUsController@florenceIndex')->name('florence.index');

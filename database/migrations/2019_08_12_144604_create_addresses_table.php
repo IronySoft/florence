@@ -18,9 +18,10 @@ class CreateAddressesTable extends Migration
             $table->string('title');
             $table->string('name');
             $table->text('address');
-            $table->text('phone1');
-            $table->text('phone2');
-            $table->text('email');
+            $table->string('phone1');
+            $table->string('phone2');
+            $table->string('email');
+            $table->tinyInteger('type')->nullable();
             $table->timestamps();
         });
     }

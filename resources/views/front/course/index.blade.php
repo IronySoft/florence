@@ -1,4 +1,6 @@
 @extends('front.master')
+
+@section('title', 'Course | Florence Nursing Center')
 @section('body')
     <section id="inner-headline">
         <div class="container">

@@ -41,7 +41,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Description</label>
-                        <textarea class="form-control" name="description" >{{$blog->description}} </textarea>
+                        <textarea id="editor1" class="form-control" name="description" >{{$blog->description}} </textarea>
                         <span class="text-danger">{{$errors->has('description')? $errors->First('description'): ''}}</span>
 
                     </div>

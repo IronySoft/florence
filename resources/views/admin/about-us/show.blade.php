@@ -15,7 +15,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Description of About Us</label>
-                        <textarea class="form-control" name="description"> {{$about->description}}</textarea>
+                        <textarea id="editor1" class="form-control" name="description"> {{$about->description}}</textarea>
 
                     </div>
 

@@ -7,6 +7,7 @@ use App\Blog;
 use App\Course;
 use App\FlorenceTeam;
 use App\MissionVision;
+use App\Notice;
 use App\Project;
 use App\Slider;
 use App\Testimonial;
@@ -43,9 +44,9 @@ class ViewController extends Controller
         ]);
     }
 
-    public function contactIndex()
+    public function noticeIndex()
     {
-//        return view('front.contact.index');
+        return view('front.notice.index', ['notices'=> Notice::all()]);
     }
 
     public function aboutIndex()

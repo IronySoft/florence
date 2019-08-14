@@ -41,7 +41,7 @@
                                         <li class="dropdown">
                                             <a href="#"><b>Admission</b></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="{{route('admission.index')}}">Notice Board</a></li>
+                                                <li><a href="{{route('view.notice.index')}}">Notice Board</a></li>
                                                 <li><a href="{{route('admission.index')}}">Why Nursing Admission?</a></li>
                                                 <li><a href="{{route('admission.create')}}">Online Admission</a></li>
                                             </ul>
@@ -50,7 +50,7 @@
                                         <li class="dropdown">
                                             <a href="#"><b>Publication</b></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="{{route('admission.index')}}">Guide & Question Book</a></li>
+                                                <li><a href="{{route('view.notice.index')}}">Guide & Question Book</a></li>
                                             </ul>
                                         </li>
                                         <li>

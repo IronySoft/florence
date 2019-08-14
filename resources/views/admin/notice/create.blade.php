@@ -5,27 +5,68 @@
         <!-- general form elements -->
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Florence Example</h3>
+                <h3 class="card-title">Notice Info</h3>
             </div>
 
-            <form action="{{route('goal.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('notice.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Title of Goal</label>
-                        <input type="text" class="form-control" name="title"
+                        <label for="exampleInputEmail1">Title of Notice</label>
+                        <input required type="text" class="form-control" name="title"
                                id="exampleInputEmail1"
-                               placeholder="Title of Mission & Vision">
+                               placeholder="Title of Notice">
                         <span class="text-danger">{{$errors->has('title')? $errors->First('title'): ''}}</span>
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Description of Goal</label>
-                        <textarea class="form-control" name="description"> </textarea>
+                        <label for="exampleInputEmail1">Price</label>
+                        <input required type="text" class="form-control" name="price"
+                               id="exampleInputEmail1"
+                               placeholder="Book Price">
+                        <span class="text-danger">{{$errors->has('price')? $errors->First('price'): ''}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Location</label>
+                        <textarea id="editor2" required class="form-control" name="location"> </textarea>
+                        <span class="text-danger">{{$errors->has('location')? $errors->First('location'): ''}}</span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Characteristics</label>
+                        <textarea id="editor1" required class="form-control" name="description"> </textarea>
                         <span class="text-danger">{{$errors->has('description')? $errors->First('description'): ''}}</span>
 
                     </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputFile">Book Image</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input required name="image" type="file" class="custom-file-input" id="exampleInputFile">
+                                <label class="custom-file-label" for="exampleInputFile">Choose
+                                    file</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="">Upload</span>
+                            </div>
+                        </div>
+                        <span class="text-danger">{{$errors->has('image')? $errors->First('image'): ''}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Notice Type</label>
+                        <select required class="form-control" name="type">
+                            <option value="1">Book Related </option>
+                            <option value="2">Others</option>
+                        </select>
+                        <span class="text-danger">{{$errors->has('type')? $errors->First('type'): ''}}</span>
+
+                    </div>
+
+
+
 
                 </div>
                 <!-- /.card-body -->
@@ -40,4 +81,5 @@
         <!-- /.card -->
 
     </div>
+
 @endsection
