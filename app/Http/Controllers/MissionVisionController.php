@@ -9,10 +9,10 @@ class MissionVisionController extends Controller
 {
 
     public function index()
-{
-    return view('admin.mission-vision.index', ['goals'=> MissionVision::all()]);
+    {
+        return view('admin.mission-vision.index', ['goals' => MissionVision::all()]);
 
-}
+    }
 
     public function create()
     {
@@ -43,7 +43,7 @@ class MissionVisionController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.mission-vision.show', ['goal' => MissionVision::findOrFail($id)]);
     }
 
     /**
@@ -66,7 +66,12 @@ class MissionVisionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $goal = MissionVision::find($id);
+        $goal->title= $request->title;
+        $goal->description= $request->description;
+        $goal->update();
+        return redirect(route('goal.index'))->with(['message' => "Mission and Vision Information UPDATED Successfully"]);
+
     }
 
     /**
@@ -77,6 +82,7 @@ class MissionVisionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        MissionVision::destroy($id);
+        return redirect(route('goal.index'))->with(['message' => "Mission and Vision Information DELETED Successfully"]);
     }
 }

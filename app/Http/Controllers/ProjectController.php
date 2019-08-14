@@ -132,7 +132,9 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-       Project::destroy($id);
+        $member = Project::find($id);
+        unlink($member->image);
+        $member->delete();
         return redirect(route('project.index'))->with(['message'=>' Project for Home Page DELETED Successfully']);
 
     }

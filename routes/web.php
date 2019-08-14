@@ -14,7 +14,6 @@
 Route::resource('view', 'ViewController');
 
 
-
 Route::get('/', 'ViewController@index')->name('/');
 Route::get('/index2', 'ViewController@index2')->name('index.type2');
 Route::get('view-blog', 'ViewController@blogIndex')->name('view.blog.index');
@@ -56,14 +55,17 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('address', 'AddressController');
 
     Route::resource('blog', 'BlogController');
+
     Route::resource('text', 'TextController');
+
     Route::resource('florence', 'FlorenceTeamController');
+
+    Route::resource('student', 'StudentController');
 
 //
 //    Route::get('florence-index', 'AboutUsController@florenceIndex')->name('florence.index');
 //    Route::get('florence-create', 'AboutUsController@florenceCreate')->name('florence.create');
 //    Route::post('florence-store', 'AboutUsController@florenceStore')->name('florence.store');
-
 
 
 });

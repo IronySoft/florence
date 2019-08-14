@@ -15,6 +15,7 @@
 
 
         <tbody>
+        @php($i=1)
         @if($projects)
             @foreach($projects as $project)
                 <tr>
@@ -25,13 +26,13 @@
                         <img src="{{asset($project->image)}}" height="50" width="50">
                     </td>
                     <td>
-                        <a href="{{route('project.show',['project'=>$project->id])}}">Edit</a>
+                        <a class="btn btn-secondary" href="{{route('project.show',['project'=>$project->id])}}">Edit</a>
 
                         <form method="post" action="{{route('project.destroy',['project'=>$project->id])}}">
 
                             @csrf
                             @method('delete')
-                            <button type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
                     </td>
 

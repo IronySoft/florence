@@ -21,8 +21,13 @@
                 <td>{{$text->text}}</td>
 
                 <td>
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
+                    <a class="btn btn-secondary" href="{{route('text.show',['text'=>$text->id])}}">Edit</a>
+                    <form method="post" action="{{route('text.destroy',['text'=>$text->id])}}">
+
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
                 </td>
 
             </tr>

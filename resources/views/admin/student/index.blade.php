@@ -6,7 +6,8 @@
         <thead>
         <tr>
             <th scope="col">#SL</th>
-            <th scope="col">Description</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Roll Number</th>
             <th scope="col">Image</th>
             <th scope="col">Action</th>
         </tr>
@@ -14,17 +15,20 @@
 
 
         <tbody>
+
         @php($i=1)
-        @foreach($blogs as $blog)
+        @foreach($students as $student)
             <tr>
                 <th scope="row">{{$i++}}</th>
-                <td>{{$blog->description}}</td>
+                <td>{{$student->name}}</td>
+                <td>{{$student->roll}}</td>
                 <td>
-                    <img src="{{asset($blog->image)}}" height="50" width="50">
+                    <img src="{{asset($student->image)}}" height="50" width="50">
                 </td>
                 <td>
-                    <a class="btn btn-secondary" href="{{route('blog.show',['blog'=>$blog->id])}}">Edit</a>
-                    <form method="post" action="{{route('blog.destroy',['blog'=>$blog->id])}}">
+                    <a class="btn btn-secondary" href="{{route('student.show',['student'=>$student->id])}}">Edit</a>
+
+                    <form method="post" action="{{route('student.destroy',['student'=>$student->id])}}">
 
                         @csrf
                         @method('delete')

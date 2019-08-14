@@ -24,13 +24,13 @@
                         <img src="{{asset($about->image)}}" height="50" width="50">
                     </td>
                     <td>
-                        <a href="{{route('about.show',['about'=>$about->id])}}">Edit</a>
+                        <a class="btn btn-secondary" href="{{route('about.show',['about'=>$about->id])}}">Edit</a>
 
                         <form method="post" action="{{route('about.destroy',['about'=>$about->id])}}">
 
                             @csrf
                             @method('delete')
-                            <button type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
                     </td>
 

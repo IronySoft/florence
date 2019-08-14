@@ -96,7 +96,9 @@ class TestimonialController extends Controller
 
     public function destroy($id)
     {
-        Testimonial::destroy($id);
+        $member = Testimonial::find($id);
+        unlink($member->image);
+        $member->delete();
         return redirect(route('testimonial.index'))->with(['message' => 'Testimonial deleted Successfully']);
 
     }

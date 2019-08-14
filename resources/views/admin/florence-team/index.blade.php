@@ -22,15 +22,15 @@
                 <td>{{$florence->name}}</td>
                 <td>{{$florence->designation}}</td>
                 <td>
-                    <img src="{{asset($project->image)}}" height="50" width="50">
+                    <img src="{{asset($florence->image)}}" height="50" width="50">
                 </td>
                 <td>
-                    <a href="{{route('florence.show',['florence'=>$florence->id])}}">Edit</a>
+                    <a class="btn btn-secondary" href="{{route('florence.show',['florence'=>$florence->id])}}">Edit</a>
                     <form method="post" action="{{route('florence.destroy',['florence'=>$florence->id])}}">
 
                         @csrf
                         @method('delete')
-                        <button type="submit">Delete</button>
+                        <button class="btn btn-danger" type="submit">Delete</button>
                     </form>
                 </td>
 

@@ -47,42 +47,60 @@ class BlogController extends Controller
 
     }
 
-    public function show(Blog $blog)
+    public function show($id)
     {
-        //
+        return view('admin.blog.show', [
+            'blog' => Blog::findOrFail($id)
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Blog $blog
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Blog $blog)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Blog $blog
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Blog $blog)
+
+    public function update(Request $request, $id)
     {
-        //
+        $row = Blog::find($id);
+
+        if ($request->hasFile('image')){
+
+            unlink($row->image);
+
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $directory = 'images/blog/';
+            $imageUrl = $directory . $imageName;
+            Image::make($image)->resize(870, 350)->save($imageUrl);
+
+            $row->writer = Auth::user()->name;
+            $row->title = $request->title;
+            $row->description = $request->description;
+            $row->image = $imageUrl;
+
+
+        }else{
+
+            $row->writer = Auth::user()->name;
+            $row->title = $request->title;
+            $row->description = $request->description;
+
+        }
+
+        $row->update();
+        return redirect(route('blog.index'))->with(['message'=>' Blog updated Successfully']);
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Blog $blog
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Blog $blog)
+
+    public function destroy($id)
     {
-        //
+        $member = Blog::find($id);
+        unlink($member->image);
+        $member->delete();
+        return redirect(route('blog.index'))->with(['message'=>' Blog DELETED Successfully']);
+
     }
 }

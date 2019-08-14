@@ -28,12 +28,12 @@
                         <img src="{{asset($slider->image)}}" height="50" width="50">
                     </td>
                     <td>
-                        <a href="{{route('slider.show',['slider'=>$slider->id])}}">Edit</a>
+                        <a class="btn btn-secondary" href="{{route('slider.show',['slider'=>$slider->id])}}">Edit</a>
                         <form method="post" action="{{route('slider.destroy',['slider'=>$slider->id])}}">
 
                             @csrf
                             @method('delete')
-                            <button type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
 
 

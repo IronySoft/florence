@@ -20,7 +20,7 @@
                 <div class="span4">
                     <div class="logo">
                         <a href="{{route('/')}}"><img src="{{asset('/')}}front/img/logo.png" alt="" class="logo" /></a>
-                        <h1>Nursing Admission Coaching Center</h1>
+                        <h1><b>Nursing Admission Coaching Center</b></h1>
                     </div>
                 </div>
                 <div class="span8">
@@ -29,47 +29,39 @@
                             <b class="text text-bold">
                                 <nav>
                                     <ul class="nav topnav">
-                                        <li class="dropdown active">
-                                            <a href="{{route('/')}}">Home <i class="icon-angle-down"></i></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="{{route('index.type2')}}">Homepage 2</a></li>
-                                            </ul>
-                                        </li>
+
+                                        <li ><a  href="{{route('/')}}"><b >Home</b></a></li>
+
+                                        <li><a href="{{route('view.blog.index')}}"><b>Blog</b></a></li>
+
+                                        <li><a href="{{route('gallery.index')}}"><b>Gallery</b></a></li>
+
+
 
                                         <li class="dropdown">
-                                            <a href="#">Gallery <i class="icon-angle-down"></i></a>
+                                            <a href="#"><b>Admission</b></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="{{route('gallery.index')}}">Gallery 3 columns</a></li>
-                                                <li><a href="portfolio-detail.html">Gallery details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Blog <i class="icon-angle-down"></i></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="{{route('view.blog.index')}}">Blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Admission<i class="icon-angle-down"></i></a>
-                                            <ul class="dropdown-menu">
+                                                <li><a href="{{route('admission.index')}}">Notice Board</a></li>
                                                 <li><a href="{{route('admission.index')}}">Why Nursing Admission?</a></li>
                                                 <li><a href="{{route('admission.create')}}">Online Admission</a></li>
                                             </ul>
                                         </li>
+                                        <li><a href="{{route('view.course.index')}}"><b>Course</b></a></li>
                                         <li class="dropdown">
-                                            <a href="#">Courses<i class="icon-angle-down"></i></a>
+                                            <a href="#"><b>Publication</b></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="{{route('view.course.index')}}">Course 1</a></li>
+                                                <li><a href="{{route('admission.index')}}">Guide & Question Book</a></li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="{{route('view.testimonial.index')}}">Testimonial</a>
+                                            <a href="{{route('view.testimonial.index')}}"><b>Testimonial</b></a>
                                         </li>
+
                                         <li>
-                                            <a href="{{route('view.about.index')}}">About Us</a>
+                                            <a href="{{route('view.about.index')}}"><b>About-Us</b></a>
                                         </li>
                                         <li id="contact" >
-                                            <a href="{{route('contact.index')}}">Contact</a>
+                                            <a href="{{route('contact.index')}}"><b>Contact</b></a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -84,6 +76,19 @@
     </header>
 </div>
 <script type="text/javascript">
+
+
+    // for(var i=1;i<=4;i++){
+    //     $("#menu"+i).hover(function(){
+    //         $(this).css("background-color", "#FDFE02");
+    //     }, function(){
+    //         $(this).css("background-color", "#FFFFFF");
+    //     });
+    //
+    // }
+
+
+
     $(window).scroll(function()
     {
         if ($(this).scrollTop() > 1)

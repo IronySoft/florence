@@ -3,16 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Address;
+
 use Illuminate\Http\Request;
 
 class AddressController extends Controller
 {
     public function index()
     {
-//        return view('admin.content.index', [
-//            'contents' => Content::with('course')->get()
-//        ]);
-
+        return view('admin.address.index', ['addresses' => Address::all()]);
     }
 
     public function create()
@@ -36,48 +34,41 @@ class AddressController extends Controller
         return redirect(route('address.index'))->with(['message' => 'Address added Successfully']);
 
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Address  $address
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Address $address)
+
+    public function show($id)
     {
-        //
+        return view('admin.address.show' ,['our_address'=> Address::find($id)]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Address  $address
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Address $address)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Address  $address
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Address $address)
     {
-        //
+        $check = Address::findOrFail($address->id);
+        if (!is_null($check)) {
+            $check->name = $request->name;
+            $check->title = $request->title;
+            $check->phone1 = $request->phone1;
+            $check->phone2 = $request->phone2;
+            $check->address = $request->address;
+            $check->email = $request->email;
+            $check->update();
+            return redirect(route('address.index'))->with(['message' => 'Address UPDATED Successfully']);
+
+        }
+        return redirect(route('address.index'))->with(['message' => 'Something is wrong!']);
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Address  $address
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Address $address)
     {
-        //
+        Address::destroy($address->id);
+        return redirect(route('address.index'))->with(['message' => 'Address DELETED Successfully']);
     }
 }

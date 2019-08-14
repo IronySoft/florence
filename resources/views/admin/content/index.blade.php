@@ -16,17 +16,24 @@
         <tbody>
 
         @php($i=1)
-        @foreach($contents as $project)
+        @foreach($contents as $content)
             <tr>
                 <th scope="row">{{$i++}}</th>
-                @if($project->course)
-                    <td>{{$project->course->first_name}} {{$project->course->last_name}}</td>
+                @if($content->course)
+                    <td>{{$content->course->first_name}} {{$content->course->last_name}}</td>
+                @else
+                    <td>No Course chosen yet</td>
                 @endif
-                <td>{{$project->name}}</td>
+                <td>{{$content->name}}</td>
 
                 <td>
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
+                    <a class="btn btn-secondary" href="{{route('content.show',['content'=>$content->id])}}">Edit</a>
+                    <form method="post" action="{{route('content.destroy',['content'=>$content->id])}}">
+
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
                 </td>
 
             </tr>

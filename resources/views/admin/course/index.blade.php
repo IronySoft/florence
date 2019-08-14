@@ -16,16 +16,21 @@
 
         <tbody>
         @php($i=1)
-        @foreach($courses as $project)
+        @foreach($courses as $course)
             <tr>
                 <th scope="row">{{$i++}}</th>
-                <td>{{$project->first_name}} {{$project->last_name}}</td>
-                <td>{{$project->month_number}} months </td>
-                <td>{{$project->month_number * $project->fee}} tk. </td>
+                <td>{{$course->first_name}} {{$course->last_name}}</td>
+                <td>{{$course->month_number}} months </td>
+                <td>{{$course->month_number * $course->fee}} tk. </td>
 
                 <td>
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
+                    <a class="btn btn-secondary" href="{{route('course.show',['course'=>$course->id])}}">Edit</a>
+                    <form method="post" action="{{route('course.destroy',['florence'=>$course->id])}}">
+
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
                 </td>
 
             </tr>

@@ -63,6 +63,7 @@ class FlorenceTeamController extends Controller
 
         if ($request->hasFile('image')){
 
+            unlink($member->image);
             $image = $request->file('image');
             $imageName = time() .'_'.$image->getClientOriginalName();
 
@@ -85,14 +86,19 @@ class FlorenceTeamController extends Controller
         }
 
 
-        $slider->update();
-        return redirect(route('florence.index'))->with(['message'=>"About our florence team member's Information added Successfully"]);
+        $member->update();
+        return redirect(route('florence.index'))->with(['message'=>"About our florence team member's Information UPDATED!"]);
 
     }
 
     public function destroy($id)
     {
-        //
+        $memebr = FlorenceTeam::find($id);
+        unlink($memebr->image);
+        $memebr->delete();
+
+        return redirect(route('florence.index'))->with(['message'=>"About our florence team member's Information UPDATED!"]);
+
     }
 
     public function florenceIndex()

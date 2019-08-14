@@ -22,6 +22,7 @@ class ViewController extends Controller
             'sliders' => Slider::all(),
             'text' => Text::all()->where('id','=',1),
             'projects' => DB::table('projects')->paginate(1),
+            'students' => DB::table('students')->get(),
 
             ]);
     }
@@ -33,7 +34,13 @@ class ViewController extends Controller
 
     public function blogIndex()
     {
-        return view('front.blog.index', ['blogs'=>Blog::paginate(5)]);
+        return view('front.blog.index', [
+            'blogs'=>Blog::paginate(5),
+            'headLines'=>DB::table('blogs')->select('title')->paginate(5),
+            'olderBlogs'=>DB::table('blogs')->orderBy('created_at','DESC')->paginate(5),
+
+
+        ]);
     }
 
     public function contactIndex()

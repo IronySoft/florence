@@ -94,7 +94,9 @@ class SliderController extends Controller
 
     public function destroy($id)
     {
-        Slider::destroy($id);
+        $member = Slider::find($id);
+        unlink($member->image);
+        $member->delete();
         return redirect(route('slider.index'))->with(['message'=>' Slider deleted Successfully']);
 
     }

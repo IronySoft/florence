@@ -33,7 +33,7 @@
     <style>
         #wrapper {
             position: relative;
-            top: 100px;
+            top: 65px;
 
         }
 
@@ -49,13 +49,13 @@
             width: 100%;
             background-color: #FDFE02;
             color: white;
-            /*font-size: 20px;*/
+            font-size: 20px;
             z-index: 2;
-            /*transition: all 0.3s ease;*/
+            transition: all 0.3s ease;
         }
 
         .sticky_header {
-            /*font-size: 6px;*/
+            font-size: 6px;
         }
 
         .mydanger {

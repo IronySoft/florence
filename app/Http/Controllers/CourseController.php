@@ -34,48 +34,36 @@ class CourseController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Course  $course
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Course $course)
     {
-        //
+        return view('admin.course.show',['course'=> Course::find($course->id)]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Course  $course
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Course $course)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Course  $course
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Course $course)
     {
-        //
+        $row = Course::find($course->id);
+
+        $row->first_name = $request->first_name;
+        $row->last_name = $request->last_name;
+        $row->fee = $request->fee;
+        $row->month_number = $request->month_number;
+
+        $row->update();
+        return redirect(route('course.index'))->with(['message' => "Course Information UPDATED Successfully"]);
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Course  $course
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Course $course)
     {
-        //
+        Course::destroy($course->id);
+        return redirect(route('course.index'))->with(['message' => "Course Information DELETED Successfully"]);
+
     }
 }

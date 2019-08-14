@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Content;
 use App\Course;
 use Illuminate\Http\Request;
@@ -33,48 +34,37 @@ class ContentController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Content $contenController
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Content $contenController)
+
+    public function show(Content $content)
+    {
+        return view('admin.content.show', [
+            'courses' => Course::all(),
+            'content' => Content::findOrFail($content->id),
+
+        ]);
+    }
+
+
+    public function edit(Content $content)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Content $contenController
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Content $contenController)
+
+    public function update(Request $request, Content $content)
     {
-        //
+        $row = Content::find($content->id);
+
+        $row->name= $request->name;
+        $row->course_id= $request->course_id;
+        $row->update();
+        return redirect(route('content.index'))->with(['message' => 'Course content UPDATED Successfully']);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Content $contenController
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Content $contenController)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Content $contenController
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Content $contenController)
+    public function destroy(Content $content)
     {
-        //
+        Content::destroy($content->id);
+        return redirect(route('content.index'))->with(['message' => 'Course content DELETED Successfully']);
     }
 }

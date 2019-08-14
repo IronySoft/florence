@@ -27,12 +27,12 @@
                         <img src="{{asset($testimonial->image)}}" height="50" width="50">
                     </td>
                     <td>
-                        <a href="{{route('testimonial.show',['testimonial'=>$testimonial->id])}}">Edit</a>
+                        <a class="btn btn-secondary" href="{{route('testimonial.show',['testimonial'=>$testimonial->id])}}">Edit</a>
                         <form method="post" action="{{route('testimonial.destroy',['testimonial'=>$testimonial->id])}}">
 
                             @csrf
                             @method('delete')
-                            <button type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
                     </td>
 

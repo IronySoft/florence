@@ -11,59 +11,84 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link active">
                         <i class="nav-icon"></i>
                         <p>
-                            Slider (home)
+                            Home Page
                             <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('slider.create')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="nav-icon fa fa-circle-o text-danger"></i>
                                 <p>Add New Slider</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('slider.index')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="nav-icon fa fa-circle-o text-danger"></i>
                                 <p>Manage Slider</p>
                             </a>
                         </li>
 
                     </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon"></i>
-                        <p>
-                            Project/work (home)
-                            <i class="fa fa-angle-left right"></i>
-                        </p>
-                    </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('project.create')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Add New Project</p>
+                            <a href="{{route('student.create')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-info"></i>
+                                <p>Add Student Info</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('project.index')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Manage Project</p>
+                            <a href="{{route('student.index')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-info"></i>
+                                <p>Manage Older Student </p>
                             </a>
                         </li>
 
                     </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('project.create')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-warning"></i>
+                                <p>Add Photos/Gallery/Project</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('project.index')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-warning"></i>
+                                <p>Manage Gallery/Project</p>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('text.create')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-success"></i>
+                                <p>Add New Text</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('text.index')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-success"></i>
+                                <p>Manage older Text </p>
+                            </a>
+                        </li>
+
+                    </ul>
+
+
                 </li>
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
-                            Testimonial (Testimonial)
+                            Testimonial Page
                             <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
@@ -83,38 +108,31 @@
 
                     </ul>
                 </li>
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
-                            About Us (about)
+                            About Page
                             <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('about.create')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="nav-icon fa fa-circle-o text-danger"></i>
                                 <p>Add about Florence</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('about.index')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="nav-icon fa fa-circle-o text-danger"></i>
                                 <p>Manage About</p>
                             </a>
                         </li>
 
                     </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon"></i>
-                        <p>
-                            Florence Team (about)
-                            <i class="fa fa-angle-left right"></i>
-                        </p>
-                    </a>
+
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('florence.create')}}" class="nav-link">
@@ -130,36 +148,32 @@
                         </li>
 
                     </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon"></i>
-                        <p>
-                            Mission & Vision (about)
-                            <i class="fa fa-angle-left right"></i>
-                        </p>
-                    </a>
+
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('goal.create')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="nav-icon fa fa-circle-o text-warning"></i>
                                 <p>Add Some Goal</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('goal.index')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="nav-icon fa fa-circle-o text-warning"></i>
                                 <p>Manage Goal List</p>
                             </a>
                         </li>
 
                     </ul>
+
                 </li>
+
+
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
-                            Course (course)
+                            Course Page
                             <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
@@ -178,26 +192,43 @@
                         </li>
 
                     </ul>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('content.create')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-info"></i>
+                                <p>Add New Content</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('content.index')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-info"></i>
+                                <p>Manage Content</p>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
-                            Content (course)
+                            Blog Page
                             <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('content.create')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Add New Course</p>
+                            <a href="{{route('blog.create')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-success"></i>
+                                <p>Add New Blog</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('content.index')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Manage Course List</p>
+                            <a href="{{route('blog.index')}}" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-success"></i>
+                                <p>Manage Blog List</p>
                             </a>
                         </li>
 
@@ -215,68 +246,19 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('address.create')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="nav-icon fa fa-circle-o text-danger"></i>
                                 <p>Add New Address</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('address.index')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="nav-icon fa fa-circle-o text-danger"></i>
                                 <p>Manage Address List</p>
                             </a>
                         </li>
 
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon"></i>
-                        <p>
-                            Blog (blog)
-                            <i class="fa fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('blog.create')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Add New Blog</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('blog.index')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Manage Blog List</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon"></i>
-                        <p>
-                            Walking text (home)
-                            <i class="fa fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('text.create')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Add New Text</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('text.index')}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Manage older Text </p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
 
 
             </ul>
