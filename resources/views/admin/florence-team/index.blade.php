@@ -22,7 +22,7 @@
                 <td>{{$florence->name}}</td>
                 <td>{{$florence->designation}}</td>
                 <td>
-                    <img src="{{asset($florence->image)}}" height="50" width="50">
+                    <img src="{{asset($florence->image)}}" height="100" width="100">
                 </td>
                 <td>
                     <a class="btn btn-secondary" href="{{route('florence.show',['florence'=>$florence->id])}}">Edit</a>

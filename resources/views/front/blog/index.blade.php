@@ -24,7 +24,7 @@
                                         <img src="{{asset($blog->image)}}" alt=""/>
                                     </div>
                                     <p>
-                                        {{$blog->description}}
+                                     {!! $blog->description !!}
                                     </p>
                                     <div class="bottom-article">
                                         <ul class="meta-post">
@@ -79,7 +79,7 @@
                                              class="pull-left" alt="" width="65" height="65"/>
                                         <h6><a href="#">{{str_limit($blog->title ,30)}}</a></h6>
                                         <p>
-                                            {{str_limit($blog->description ,50)}}
+                                            {!! str_limit($blog->description ,40) !!}
                                         </p>
                                     </li>
                                 @endforeach
@@ -95,7 +95,7 @@
                                              class="pull-left" alt="" width="65" height="65"/>
                                         <h6><a href="#">{{str_limit($blog->title ,30)}}</a></h6>
                                         <p>
-                                            {{str_limit($blog->description ,50)}}
+                                            {!! str_limit($blog->description ,40) !!}
                                         </p>
                                     </li>
                                 @endforeach

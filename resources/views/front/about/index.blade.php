@@ -12,10 +12,10 @@
         <div class="container">
             <div class="row">
                 <div class="span6">
-                    <h2>Welcome to <strong>Florence</strong></h2>
+                    <h2>Welcome to <strong style="color: #FD0000">Florence</strong></h2>
                     @foreach($abouts as $row)
                         <p>
-                            {{$row->description}}
+                            {!! $row->description !!}
                         </p>
                     @endforeach
 
@@ -45,7 +45,7 @@
             <!-- end divider -->
             <div class="row">
                 <div class="span12">
-                    <h4>Talented peoples behind Flattern</h4>
+                    <h4>Talented peoples behind <b style="color: #FD0000">Florence</b></h4>
                 </div>
                 @foreach($florenceTeams as $row)
                     <div class="span3">

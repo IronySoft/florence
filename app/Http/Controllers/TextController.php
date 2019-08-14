@@ -9,7 +9,7 @@ class TextController extends Controller
 {
     public function index()
     {
-        return view('admin.text.index', ['texts' => Text::all()]);
+        return  view('admin.text.index', ['my_texts' => Text::all()]);
     }
 
     public function create()
@@ -37,7 +37,7 @@ class TextController extends Controller
 
     public function show($id)
     {
-        return view('admin.text.index', ['text' => Text::findOrFail($id)]);
+        return view('admin.text.show', ['text' => Text::findOrFail($id)]);
     }
 
     /**

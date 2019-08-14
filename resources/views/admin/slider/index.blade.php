@@ -23,9 +23,9 @@
                     <th scope="row">{{$i++}}</th>
                     <td>{{$slider->first_title}}</td>
                     <td>{{$slider->last_title}}</td>
-                    <td>{{$slider->description}}</td>
+                    <td>{!! $slider->description !!}</td>
                     <td>
-                        <img src="{{asset($slider->image)}}" height="50" width="50">
+                        <img src="{{asset($slider->image)}}" height="100" width="100">
                     </td>
                     <td>
                         <a class="btn btn-secondary" href="{{route('slider.show',['slider'=>$slider->id])}}">Edit</a>

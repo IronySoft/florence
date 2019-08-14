@@ -18,9 +18,9 @@
         @foreach($blogs as $blog)
             <tr>
                 <th scope="row">{{$i++}}</th>
-                <td>{{$blog->description}}</td>
+                <td>{!! $blog->description !!}</td>
                 <td>
-                    <img src="{{asset($blog->image)}}" height="50" width="50">
+                    <img src="{{asset($blog->image)}}" height="100" width="100">
                 </td>
                 <td>
                     <a class="btn btn-secondary" href="{{route('blog.show',['blog'=>$blog->id])}}">Edit</a>

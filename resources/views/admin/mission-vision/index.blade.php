@@ -19,7 +19,7 @@
             <tr>
                 <th scope="row">{{$i++}}</th>
                 <td>{{$goal->title}}</td>
-                <td>{{$goal->description}}</td>
+                <td>{!! $goal->description !!}</td>
 
                 <td>
                     <a class="btn btn-secondary" href="{{route('goal.show',['goal'=>$goal->id])}}">Edit</a>

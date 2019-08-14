@@ -22,7 +22,7 @@ class ViewController extends Controller
         return view('front.home.index', [
             'sliders' => Slider::all(),
             'text' => Text::all()->where('id','=',1),
-            'projects' => DB::table('projects')->paginate(1),
+            'projects' => DB::table('projects')->paginate(6),
             'students' => DB::table('students')->get(),
 
             ]);
@@ -36,9 +36,9 @@ class ViewController extends Controller
     public function blogIndex()
     {
         return view('front.blog.index', [
-            'blogs'=>Blog::paginate(5),
+            'blogs'=>DB::table('blogs')->orderBy('created_at','DESC')->paginate(5),
             'headLines'=>DB::table('blogs')->select('title')->paginate(5),
-            'olderBlogs'=>DB::table('blogs')->orderBy('created_at','DESC')->paginate(5),
+            'olderBlogs'=>DB::table('blogs')->orderBy('created_at','ASC')->paginate(5),
 
 
         ]);
@@ -46,7 +46,7 @@ class ViewController extends Controller
 
     public function noticeIndex()
     {
-        return view('front.notice.index', ['notices'=> Notice::all()]);
+        return view('front.notice.index', ['notices'=> DB::table('notices')->orderBy('created_at','DESC')->get()]);
     }
 
     public function aboutIndex()

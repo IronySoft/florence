@@ -27,7 +27,7 @@
 
                 <td>{{$row->title}}</td>
                 <td>{{$row->name}}</td>
-                <td>{{$row->address}}</td>
+                <td>{!! $row->address !!}</td>
                 <td>{{$row->phone1}}</td>
                 <td>{{$row->phone2}}</td>
                 <td>{{$row->email}}</td>

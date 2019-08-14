@@ -21,10 +21,10 @@
                 <tr>
                     <th scope="row">{{$i++}}</th>
                     <td>{{$testimonial->author_name}}</td>
-                    <td>{{$testimonial->speech}}</td>
+                    <td>{!! $testimonial->speech !!}</td>
                     <td>{{$testimonial->designation}}</td>
                     <td>
-                        <img src="{{asset($testimonial->image)}}" height="50" width="50">
+                        <img src="{{asset($testimonial->image)}}" height="100" width="100">
                     </td>
                     <td>
                         <a class="btn btn-secondary" href="{{route('testimonial.show',['testimonial'=>$testimonial->id])}}">Edit</a>

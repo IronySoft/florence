@@ -22,9 +22,9 @@
             <tr>
                 <th scope="row">{{$i++}}</th>
                 <td>{{$notice->title}}</td>
-                <td>{{$notice->description}}</td>
+                <td>{!! $notice->description !!}</td>
                 <td>{{$notice->price}}</td>
-                <td>{{$notice->location}}</td>
+                <td>{!! $notice->location !!}</td>
                 <td>
                     <img src="{{asset($notice->image)}}" width="100" height="100">
                 </td>

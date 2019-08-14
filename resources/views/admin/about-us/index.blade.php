@@ -2,7 +2,7 @@
 @section('body')
 
     <h1 class="text text-primary"> {{Session::get('message')}}</h1>
-    <table class="table">
+    <table class="table table-bordered table-responsive">
         <thead>
         <tr>
             <th scope="col">#SL</th>
@@ -19,9 +19,9 @@
             @foreach($abouts as $about)
                 <tr>
                     <th scope="row">{{$i++}}</th>
-                    <td>{{$about->description}}</td>
+                    <td>{!! $about->description !!}</td>
                     <td>
-                        <img src="{{asset($about->image)}}" height="50" width="50">
+                        <img src="{{asset($about->image)}}" height="100" width="100">
                     </td>
                     <td>
                         <a class="btn btn-secondary" href="{{route('about.show',['about'=>$about->id])}}">Edit</a>

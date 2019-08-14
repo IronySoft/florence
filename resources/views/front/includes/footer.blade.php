@@ -19,7 +19,7 @@
                 <h5 class="widgetheading">{{$row->title}}</h5>
                 <address>
                     <strong>{{$row->name}}</strong><br>
-                    {{$row->address}}<br>
+                    {!! $row->address !!}<br>
 
                 </address>
                 <p>

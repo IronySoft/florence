@@ -15,7 +15,7 @@
                                 <h3 >We have <b>{{count($branches)}}</b> Branches in <span class="highlight"><strong>Chattogram & Dhaka</strong></span>
                                 </h3>
                             </div>
-                            <div class="cta floatright">
+                            <div class="cta floatright ">
                                 <a class="btn btn-large btn-theme btn-rounded" href="#">Visit our Branch</a>
                             </div>
                         </div>
@@ -33,13 +33,13 @@
                                 <div class="box aligncenter">
                                     <div class="aligncenter icon">
                                         <br/>
-                                        <h6 class=" btn-theme"><b>{{$branch->title}}</b></h6>
+                                        <h6 class="btn btn-large btn-theme btn-rounded"><b>{{$branch->title}}</b></h6>
                                     </div>
                                     <div class="text">
 
                                         <p>
                                             <b>
-                                                {{$branch->address}} <br/>
+                                                {!! $branch->address !!} <br/>
                                                 <i>{{$branch->phone1}},
                                                     {{$branch->phone2}}
                                                 </i>

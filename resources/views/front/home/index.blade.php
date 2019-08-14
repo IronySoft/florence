@@ -4,6 +4,8 @@
 
     <section id="content">
         @include('front.includes.slider.slider')
+        <br/>
+        <br/>
         <div class="container">
             <!-- Portfolio Projects -->
             <div class="row">
@@ -15,7 +17,7 @@
                                 @php($i=0)
                                 @if($projects)
                                     @foreach($projects as $project)
-                                        <li class="item-thumbs span3 design" data-id="id-{{$i++}}" data-type="web">
+                                        <li class="item-thumbs span4 design" data-id="id-{{$i++}}" data-type="web">
                                             <a class="hover-wrap fancybox" data-fancybox-group="gallery"
                                                title="{{$project->title}}" href="{{asset($project->large_image)}}">
                                                 <span class="overlay-img"></span>
@@ -46,6 +48,7 @@
             </div>
             <!-- end divider -->
             <div class="row">
+
                 <div class="span12">
                     <h4>Our Students who got Chance in<strong> NURSING!</strong></h4>
                     <ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">

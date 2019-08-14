@@ -23,7 +23,7 @@
                 <td>{{$student->name}}</td>
                 <td>{{$student->roll}}</td>
                 <td>
-                    <img src="{{asset($student->image)}}" height="50" width="50">
+                    <img src="{{asset($student->image)}}" height="100" width="100">
                 </td>
                 <td>
                     <a class="btn btn-secondary" href="{{route('student.show',['student'=>$student->id])}}">Edit</a>

@@ -21,9 +21,9 @@
                 <tr>
                     <th scope="row">{{$i++}}</th>
                     <td>{{$project->title}}</td>
-                    <td>{{$project->description}}</td>
+                    <td>{!! $project->description !!}</td>
                     <td>
-                        <img src="{{asset($project->image)}}" height="50" width="50">
+                        <img src="{{asset($project->image)}}" height="100" width="100">
                     </td>
                     <td>
                         <a class="btn btn-secondary" href="{{route('project.show',['project'=>$project->id])}}">Edit</a>

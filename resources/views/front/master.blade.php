@@ -17,9 +17,7 @@
     <link href="{{asset('/')}}front/css/jcarousel.css" rel="stylesheet"/>
     <link href="{{asset('/')}}front/css/flexslider.css" rel="stylesheet"/>
     <link href="{{asset('/')}}front/css/style.css" rel="stylesheet"/>
-    <!-- Theme skin -->
     <link href="{{asset('/')}}front/skins/default.css" rel="stylesheet"/>
-    <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
           href="{{asset('/')}}front/ico/apple-touch-icon-144-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="114x114"
@@ -37,10 +35,10 @@
 
         }
 
-        .footer {
-            background-color: #FDFE02;
+        /*.footer {*/
+        /*background-color: #FDFE02;*/
 
-        }
+        /*}*/
 
         .big_header {
 
@@ -54,34 +52,42 @@
             transition: all 0.3s ease;
         }
 
-        .sticky_header {
-            font-size: 6px;
-        }
+        /*.sticky_header {*/
+        /*font-size: 6px;*/
+        /*}*/
 
         .mydanger {
             color: #fe1f28;
         }
+
     </style>
 </head>
 
 <body>
 <div id="wrapper">
+
     <!-- toggle top area -->
     <div class="hidden-top">
         <div class="hidden-top-inner container">
             <div class="row">
                 <div class="span12">
-                    <ul>
+                    <br/>
+                    <br/>
+                    <br/>
+
                         @foreach($address as $row)
-                            <li><strong>Our Course is available for any month</strong></li>
-                            <li>{{$row->address}}</li>
-                            <li>Call us <i class="icon-phone"></i> ({{$row->phone1}})- ({{$row->phone2}})</li>
+                           <strong>Our Course is available in any month</strong>
+                                {!! $row->address !!} <i class="icon-phone"> ({{$row->phone1}}) and ({{$row->phone2}})</i>
+
+
+
                         @endforeach
-                    </ul>
+
                 </div>
             </div>
         </div>
     </div>
+
 
     @include('front.includes.header.header')
 
@@ -92,9 +98,35 @@
     </footer>
 </div>
 <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
-<!-- javascript
-  ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+<script>
+
+
+    $(window).resize(function () {
+
+        // if ($(this).width() < 1024) {
+        //
+        //     // $('.myHider').hide();
+        //     //$('#sarjis').css("display", "none")
+        //
+        // } else {
+        //
+        //     $('#sarjis').css("display", "block")
+        //
+        // }
+        // if ($(this).width() < 1024) {
+        //
+        //     $('.myHider2').hide();
+        //
+        // } else {
+        //
+        //     $('.myHider2').show();
+        //
+        // }
+
+
+    });
+
+</script>
 <script src="{{asset('/')}}front/js/jquery.js"></script>
 <script src="{{asset('/')}}front/js/jquery.easing.1.3.js"></script>
 <script src="{{asset('/')}}front/js/bootstrap.js"></script>

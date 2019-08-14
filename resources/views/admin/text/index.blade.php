@@ -2,7 +2,7 @@
 @section('body')
 
     <h1 class="text text-primary"> {{Session::get('message')}}</h1>
-    <table class="table">
+    <table class="table table-responsive table-bordered table-hover">
         <thead>
         <tr>
             <th scope="col">#SL</th>
@@ -15,10 +15,11 @@
 
         <tbody>
         @php($i=1)
-        @foreach($texts as $text)
+        {{--{{$my_texts}}--}}
+        @foreach($my_texts as $text)
             <tr>
                 <th scope="row">{{$i++}}</th>
-                <td>{{$text->text}}</td>
+                <td>{!! $text->text !!}</td>
 
                 <td>
                     <a class="btn btn-secondary" href="{{route('text.show',['text'=>$text->id])}}">Edit</a>

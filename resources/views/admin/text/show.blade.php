@@ -16,8 +16,8 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Walking Notice (marquee)</label>
-                        <textarea type="text" class="form-control" name="text"
-                               id="exampleInputEmail1">{{$text->text}}</textarea>
+                        <textarea  type="text" class="form-control" name="text"
+                               id="editor1">{{$text->text}}</textarea>
                         <span class="text-danger">{{$errors->has('text')? $errors->First('text'): ''}}</span>
                     </div>
                 </div>

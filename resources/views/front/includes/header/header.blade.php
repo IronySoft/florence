@@ -1,8 +1,11 @@
 
 <div>
+
     <header id="header" class="big_header">
+
         <div   class="container ">
             <!-- hidden top area toggle link -->
+
             <div id="header-hidden-link">
                 <a href="#" class="toggle-link btn btn-theme btn-large e_shake" title="Click me you'll get a surprise" data-target=".hidden-top"><i></i>Open</a>
             </div>
@@ -38,19 +41,20 @@
 
 
 
+
+                                        <li><a href="{{route('view.course.index')}}"><b>Course</b></a></li>
+                                        <li class="dropdown">
+                                            <a href="#"><b>Publication</b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="{{route('view.notice.index')}}">Guide & Question Book</a></li>
+                                            </ul>
+                                        </li>
                                         <li class="dropdown">
                                             <a href="#"><b>Admission</b></a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="{{route('view.notice.index')}}">Notice Board</a></li>
                                                 <li><a href="{{route('admission.index')}}">Why Nursing Admission?</a></li>
                                                 <li><a href="{{route('admission.create')}}">Online Admission</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{route('view.course.index')}}"><b>Course</b></a></li>
-                                        <li class="dropdown">
-                                            <a href="#"><b>Publication</b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="{{route('view.notice.index')}}">Guide & Question Book</a></li>
                                             </ul>
                                         </li>
                                         <li>
@@ -94,16 +98,17 @@
         if ($(this).scrollTop() > 1)
         {
             $('#header').addClass("sticky_header");
+            $('#sarjis').css("display",'none');
         }
         else
         {
             $('#header').removeClass("sticky_header");
         }
     });
-
-
-    $('#contact').click(function () {
-        $('#contact').addClass("active");
-    })
+    //
+    //
+    // $('#contact').click(function () {
+    //     $('#contact').addClass("active");
+    // })
 </script>
 
