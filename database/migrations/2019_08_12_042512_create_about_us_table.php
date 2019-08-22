@@ -17,6 +17,7 @@ class CreateAboutUsTable extends Migration
             $table->bigIncrements('id');
             $table->text('description');
             $table->text('image');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

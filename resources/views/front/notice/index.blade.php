@@ -1,57 +1,52 @@
 @extends('front.master')
 @section('title', 'Notice | Florence Nursing Center')
 @section('body')
-    <section id="inner-headline">
+
+
+    <div id="colorlib-container">
         <div class="container">
             <div class="row">
+                <div class="col-md-10 col-md-offset-1">
 
-            </div>
-        </div>
-    </section>
-    <section id="content">
-        <div class="container">
-            @foreach($notices as $notice)
-            <div class="row">
-                <div class="span8">
-
-                        <article>
-                            <div class="top-wrapper">
-                                {{--<div class="post-heading">--}}
-                                    {{--<h3><a href="#">{{$notice->title}}</a></h3>--}}
-                                {{--</div>--}}
-                                <!-- start flexslider -->
-                                <div class="flexslider">
-                                    <ul class="slides">
-                                        <li>
-                                            <img src="{{asset($notice->image)}}" alt=""/>
-                                        </li>
-
-                                    </ul>
+                    <div class="row row-pb-md">
+                        @foreach($notices as $row)
+                            <div class="col-md-6">
+                                <div class="blog-entry">
+                                    <div class="blog-img">
+                                        <a href="blog.html"><img src="{{asset('/')}}front/images/blog-13.jpg"
+                                                                 class="img-responsive" alt="html5 bootstrap template"></a>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="meta">
+                                            <span class="cat"><a href="#">Events</a></span>
+                                            <span class="date">20 March 2018</span>
+                                            <span class="pos">By <a href="#">Rich</a></span>
+                                        </p>
+                                        <h2><a href="blog.html">{{$row->id}}</a></h2>
+                                        <p>A small river named Duden flows by their place and supplies it with the
+                                            necessary </p>
+                                    </div>
                                 </div>
                             </div>
 
-                        </article>
+                        @endforeach
+                    </div>
 
-                </div>
-                <div class="span4">
-                    <aside class="right-sidebar">
-                        <div class="widget">
-                            <h5 class="widgetheading">{{$notice->title}}</h5>
-                            <ul class="folio-detail">
-                                <li><label>Price :</label>{{$notice->price}} tk.</li>
-                                <li><label>প্রপ্তিস্থান :</label> {!!$notice->location  !!}</li>
-                               </ul>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#">&laquo;</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
                         </div>
-                        <div class="widget">
-                            <h5 class="widgetheading">Text widget</h5>
-                            <p>
-                                {!! $notice->description !!}
-                            </p>
-                        </div>
-                    </aside>
+                    </div>
                 </div>
             </div>
-            @endforeach
         </div>
-    </section>
+    </div>
 @endsection

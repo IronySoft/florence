@@ -22,6 +22,7 @@ class CreateAddressesTable extends Migration
             $table->string('phone2');
             $table->string('email');
             $table->tinyInteger('type')->nullable();
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

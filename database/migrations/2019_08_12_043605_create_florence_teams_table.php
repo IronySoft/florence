@@ -18,6 +18,7 @@ class CreateFlorenceTeamsTable extends Migration
             $table->string('name');
             $table->text('image');
             $table->string('designation');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

@@ -1,200 +1,157 @@
 @extends('front.master')
-@section('title', 'About | Florence Nursing Center')
+@section('title', 'Blog | Florence Nursing Center')
 @section('body')
-    <section id="inner-headline">
+    <div id="colorlib-container">
         <div class="container">
-            <div class="row">
+            {{--<div class="row">--}}
+                {{--<blockquote class="text text-danger ">--}}
+                    {{--@foreach($texts as $row)--}}
+                        {{--<marquee>--}}
+                            {{--{!! $row->text !!}--}}
+                        {{--</marquee>--}}
+                    {{--@endforeach--}}
 
-            </div>
-        </div>
-    </section>
-    <section id="content">
-        <div class="container">
-            <div class="row">
-                <div class="span6">
-                    <h2>Welcome to <strong style="color: #FD0000">Florence</strong></h2>
-                    @foreach($abouts as $row)
+                {{--</blockquote>--}}
+            {{--</div>--}}
+            @foreach($abouts as $row)
+
+
+                <div class="row">
+
+                    <div class="col-md-8">
+                        {{--<p>Hi! My Name is <strong>Rich</strong> Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>--}}
+
                         <p>
                             {!! $row->description !!}
                         </p>
-                    @endforeach
-
-                </div>
-                <div class="span6">
-                    <!-- start flexslider -->
-                    <div class="flexslider">
-                        <ul class="slides">
-
-                            @foreach($abouts as $row)
-                                <li>
-                                    <img src="{{asset($row->image)}}" alt=""/>
-                                </li>
-                            @endforeach
+                        <ul class="colorlib-social-icons">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
                         </ul>
+                        </p>
                     </div>
-                    <!-- end flexslider -->
-                </div>
-            </div>
-            <!-- divider -->
-            <div class="row">
-                <div class="span12">
-                    <div class="solidline">
-                    </div>
-                </div>
-            </div>
-            <!-- end divider -->
-            <div class="row">
-                <div class="span12">
-                    <h4>Talented peoples behind <b style="color: #FD0000">Florence</b></h4>
-                </div>
-                @foreach($florenceTeams as $row)
-                    <div class="span3">
-                        <img src="{{asset($row->image)}}" alt="" class="img-polaroid"/>
-                        <div class="roles">
-                            <p class="lead">
-                                <strong>{{$row->name}}</strong>
-                            </p>
-                            <p>
-                                {{$row->designation}}
-                            </p>
-                        </div>
-                    </div>
-                @endforeach
 
-            </div>
-            <!-- divider -->
-            <div class="row">
-                <div class="span12">
-                    <div class="solidline">
+                    <div class="col-md-4">
+                        <img class="img-responsive" src="{{asset('/')}}front/images/author.jpg" alt="">
                     </div>
                 </div>
-            </div>
-            <!-- end divider -->
-            <div class="row">
-                <div class="span6">
-                    <h4>More about us</h4>
-                    <div class="accordion" id="accordion2">
-                        @php($i=1)
-                        @foreach($goals as $goal)
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-                                       href="#collapseOne">
-                                        {{$i++}}. {{$goal->title}} </a>
-                                </div>
-                                <div id="collapseOne" class="accordion-body collapse in">
-                                    <div class="accordion-inner">
-                                        <p>
-                                            {{$goal->description}}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+            @endforeach
 
-                        @endforeach
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-                                   href="#collapseTwo">
-                                    2. Work process </a>
-                            </div>
-                            <div id="collapseTwo" class="accordion-body collapse">
-                                <div class="accordion-inner">
-                                    <p>
-                                        Nihil suscipit posidonium eos id. An cetero fierent insolens mel, ex sit rebum
-                                        falli erroribus. Ius in nemore dolorum officiis. Et vel harum dicant, vix eius
-                                        persius an. Ex eam malis postea, erat nihil consulatu nam ea. Ex quem dolores
-                                        euripidis eum,
-                                        tempor aperiam voluptaria has ad. Ea est persecuti dissentiet voluptatibus, at
-                                        illum malorum minimum usu eum aeterno tritani.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-                                   href="#collapseThree">
-                                    3. Quality assurance </a>
-                            </div>
-                            <div id="collapseThree" class="accordion-body collapse">
-                                <div class="accordion-inner">
-                                    <p>
-                                        Vel purto oportere principes ne, ut mel graeco omnesque. Habeo justo congue mei
-                                        cu, eu est molestie sensibus, oratio tibique ad mei. Admodum consetetur cu eam,
-                                        nec cu doming prompta inciderint, ne vim ceteros mnesarchum scriptorem. Ex eam
-                                        malis postea,
-                                        erat nihil consulatu nam ea. Ex quem dolores euripidis eum, tempor aperiam
-                                        voluptaria has ad. Et vel harum dicant vix.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-                                   href="#collapseFour">
-                                    4. What we can deliver </a>
-                            </div>
-                            <div id="collapseFour" class="accordion-body collapse">
-                                <div class="accordion-inner">
-                                    <p>
-                                        Diam alienum oporteat ad vis, latine intellegebat cu his. Ei eros dicam commodo
-                                        duo, an assum meliore eam. In sed albucius dissentiet. Sit laudem graece malorum
-                                        ne, at eam omnesque expetenda pertinacia, tale meliore vim ea. Dolore legere
-                                        deleniti ius
-                                        at, mea nibh discere perfecto ex. Mea ea iuvaret eripuit, eos no vivendo
-                                        intellegat definiebas, patrioque eloquentiam eos et.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-                                   href="#collapseFour">
-                                    4. What we can deliver </a>
-                            </div>
-                            <div id="collapseFour" class="accordion-body collapse">
-                                <div class="accordion-inner">
-                                    <p>
-                                        Diam alienum oporteat ad vis, latine intellegebat cu his. Ei eros dicam commodo
-                                        duo, an assum meliore eam. In sed albucius dissentiet. Sit laudem graece malorum
-                                        ne, at eam omnesque expetenda pertinacia, tale meliore vim ea. Dolore legere
-                                        deleniti ius
-                                        at, mea nibh discere perfecto ex. Mea ea iuvaret eripuit, eos no vivendo
-                                        intellegat definiebas, patrioque eloquentiam eos et.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="span6">
-                    <h4>Our expertise</h4>
-                    <label>Web design:</label>
-                    <div class="progress progress-info progress-striped active">
-                        <div class="bar" style="width: 90%">
-                        </div>
-                    </div>
-                    <label>Wordpress :</label>
-                    <div class="progress progress-success progress-striped active">
-                        <div class="bar" style="width: 60%">
-                        </div>
-                    </div>
-                    <label>Photoshop :</label>
-                    <div class="progress progress-warning progress-striped active">
-                        <div class="bar" style="width: 80%">
-                        </div>
-                    </div>
-                    <label>Ilustrator :</label>
-                    <div class="progress progress-danger progress-striped active">
-                        <div class="bar" style="width: 40%">
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
+
+    {{--<section id="inner-headline">--}}
+    {{--<div class="container">--}}
+    {{--<div class="row">--}}
+
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</section>--}}
+    {{--<section id="content">--}}
+    {{--<div class="container">--}}
+    {{--<div class="row">--}}
+    {{--<div class="span8">--}}
+    {{--<article>--}}
+    {{--<div class="row">--}}
+    {{--@foreach($blogs as $blog)--}}
+
+    {{--<div class="span8">--}}
+    {{--<div class="post-image">--}}
+    {{--<div class="post-heading">--}}
+    {{--<h3><a href="#">{{$blog->title}}</a></h3>--}}
+    {{--</div>--}}
+    {{--<img src="{{asset($blog->image)}}" alt=""/>--}}
+    {{--</div>--}}
+    {{--<p>--}}
+    {{--{!! $blog->description !!}--}}
+    {{--</p>--}}
+    {{--<div class="bottom-article">--}}
+    {{--<ul class="meta-post">--}}
+    {{--<li><i class="icon-calendar"></i><a href="#"> {{$blog->created_at}}</a></li>--}}
+    {{--<li><i class="icon-user"></i><a href="#">posted by: {{$blog->writer}}</a>--}}
+    {{--</li>--}}
+    {{--<li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>--}}
+    {{--<li><i class="icon-comments"></i><a href="#">4 Comments</a></li>--}}
+    {{--</ul>--}}
+    {{--<a target="_blank"--}}
+    {{--href="https://www.facebook.com/profile.php?id=100006495202618"--}}
+    {{--class="pull-right">Chat<i class="icon-angle-right"></i></a>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--@endforeach--}}
+
+    {{--</div>--}}
+    {{--</article>--}}
+
+    {{--<div id="pagination">--}}
+    {{--<span class="all">Page 1 of 3</span>--}}
+    {{--<span class="current">1</span>--}}
+    {{--<a href="#" class="inactive">2</a>--}}
+    {{--<a href="#" class="inactive">3</a>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--<div class="span4">--}}
+    {{--<aside class="right-sidebar">--}}
+    {{--<div class="widget">--}}
+    {{--<form method="post" action="{{route('blog.store')}}" class="form-search">--}}
+    {{--@csrf--}}
+    {{--<input placeholder="Type something" type="text" class="input-medium search-query">--}}
+    {{--<button type="submit" class="btn btn-square btn-theme">Search</button>--}}
+    {{--</form>--}}
+    {{--</div>--}}
+    {{--<div class="widget">--}}
+    {{--<h5 class="widgetheading">Favourite Post</h5>--}}
+    {{--<ul class="cat">--}}
+    {{--@foreach($headLines as $headLine)--}}
+    {{--<li><i class="icon-angle-right"></i><a--}}
+    {{--href="#">{{$headLine->title}}</a><span> (20)</span></li>--}}
+    {{--@endforeach--}}
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--<div class="widget">--}}
+    {{--<h5 class="widgetheading">Latest posts</h5>--}}
+    {{--<ul class="recent">--}}
+
+    {{--@foreach($blogs as $blog)--}}
+    {{--<li>--}}
+    {{--<img src="{{asset($blog->image)}}"--}}
+    {{--class="pull-left" alt="" width="65" height="65"/>--}}
+    {{--<h6><a href="#">{{str_limit($blog->title ,30)}}</a></h6>--}}
+    {{--<p>--}}
+    {{--{!! str_limit($blog->description ,40) !!}--}}
+    {{--</p>--}}
+    {{--</li>--}}
+    {{--@endforeach--}}
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--<div class="widget">--}}
+    {{--<h5 class="widgetheading">Older posts</h5>--}}
+    {{--<ul class="recent">--}}
+
+    {{--@foreach($olderBlogs as $blog)--}}
+    {{--<li>--}}
+    {{--<img src="{{asset($blog->image)}}"--}}
+    {{--class="pull-left" alt="" width="65" height="65"/>--}}
+    {{--<h6><a href="#">{{str_limit($blog->title ,30)}}</a></h6>--}}
+    {{--<p>--}}
+    {{--{!! str_limit($blog->description ,40) !!}--}}
+    {{--</p>--}}
+    {{--</li>--}}
+    {{--@endforeach--}}
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--<div class="widget">--}}
+    {{--<h5 class="widgetheading">Popular Name</h5>--}}
+    {{--<ul class="tags">--}}
+    {{--<li><a href="#">Web design</a></li>--}}
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--</aside>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</section>--}}
 @endsection
+

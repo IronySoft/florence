@@ -17,6 +17,7 @@ class CreateMissionVisionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ class CreateStudentsTable extends Migration
             $table->string('name');
             $table->string('roll');
             $table->text('image');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class CreateContentsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('course_id');
             $table->string('name');
-
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

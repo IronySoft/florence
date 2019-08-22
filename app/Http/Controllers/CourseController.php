@@ -25,10 +25,10 @@ class CourseController extends Controller
 
             'first_name' => 'required',
             'last_name' => 'required',
-            'fee' => 'required',
-            'month_number' => 'required',
+            'description' => 'required',
         ]);
 
+        //return $request;
         Course::create($request->all());
         return redirect(route('course.index'))->with(['message' => "Course Information added Successfully"]);
 
@@ -42,7 +42,21 @@ class CourseController extends Controller
 
     public function edit(Course $course)
     {
-        //
+        $row = Course::find($course->id);
+
+        if ($row->status==1){
+            $row->status =0;
+        }
+        else{
+            $row->status =1;
+        }
+
+
+
+        $row->update();
+        return redirect(route('course.index'))->with(['message' => "Course Information UPDATED Successfully"]);
+
+
     }
 
     public function update(Request $request, Course $course)
@@ -51,8 +65,8 @@ class CourseController extends Controller
 
         $row->first_name = $request->first_name;
         $row->last_name = $request->last_name;
-        $row->fee = $request->fee;
-        $row->month_number = $request->month_number;
+        $row->description = $request->description;
+
 
         $row->update();
         return redirect(route('course.index'))->with(['message' => "Course Information UPDATED Successfully"]);

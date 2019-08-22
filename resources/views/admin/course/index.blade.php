@@ -2,13 +2,13 @@
 @section('body')
 
     <h1 class="text text-primary"> {{Session::get('message')}}</h1>
-    <table class="table">
+    <table class="table table-responsive">
         <thead>
         <tr>
             <th scope="col">#SL</th>
             <th scope="col">Name</th>
-            <th scope="col">Duration</th>
-            <th scope="col">Total Fees</th>
+            <th scope="col">Description</th>
+
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -20,10 +20,15 @@
             <tr>
                 <th scope="row">{{$i++}}</th>
                 <td>{{$course->first_name}} {{$course->last_name}}</td>
-                <td>{{$course->month_number}} months </td>
-                <td>{{$course->month_number * $course->fee}} tk. </td>
+                <td>{{$course->description}} </td>
+
 
                 <td>
+                    @if($course->status==1)
+                        <a class="btn btn-secondary" href="{{route('course.edit',['course'=>$course->id])}}">Publish</a>
+                    @else
+                        <a class="btn btn-secondary" href="{{route('course.edit',['course'=>$course->id])}}">Un-publish</a>
+                    @endif
                     <a class="btn btn-secondary" href="{{route('course.show',['course'=>$course->id])}}">Edit</a>
                     <form method="post" action="{{route('course.destroy',['florence'=>$course->id])}}">
 

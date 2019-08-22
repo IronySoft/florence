@@ -15,26 +15,25 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Course First Name</label>
-                        <input type="text" required class="form-control" name="first_name">
+                        <div class="form-group">
+                            <textarea id="editor1" class="form-control" name="first_name"> </textarea>
+                            <span class="text-danger">{{$errors->has('first_name')? $errors->First('first_name'): ''}}</span>
+
+                        </div>
                         <span class="text-danger">{{$errors->has('first_name')? $errors->First('first_name'): ''}}</span>
 
                     </div><div class="form-group">
                         <label for="exampleInputEmail1">Course Last Name</label>
-                        <input type="text" required class="form-control" name="last_name">
+                        <textarea id="editor2" class="form-control" name="last_name"> </textarea>
                         <span class="text-danger">{{$errors->has('last_name')? $errors->First('last_name'): ''}}</span>
 
                     </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Course Duration (how many months?)</label>
-                        <input type="number" required class="form-control" name="month_number">
-                        <span class="text-danger">{{$errors->has('month_number')? $errors->First('month_number'): ''}}</span>
 
-                    </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Course Fee (per month)</label>
-                        <input type="number" required class="form-control" name="fee">
-                        <span class="text-danger">{{$errors->has('fee')? $errors->First('fee'): ''}}</span>
+                        <label for="exampleInputEmail1">Description</label>
+                        <textarea id="editor4" class="form-control" name="description"> </textarea>
+                        <span class="text-danger">{{$errors->has('description')? $errors->First('description'): ''}}</span>
 
                     </div>
 

@@ -20,6 +20,7 @@ class CreateAdmissionsTable extends Migration
 //            $table->integer('exam_id');
 //            $table->float('phone1');
 //            $table->float('phone2');
+//            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

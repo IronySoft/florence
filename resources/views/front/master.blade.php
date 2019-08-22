@@ -1,150 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE HTML>
+<html>
 <head>
     <meta charset="utf-8">
-    <title>@yield('title')</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Stuff Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
     <meta name="author" content=""/>
 
-    <!-- css -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700"
-          rel="stylesheet">
-    <link href="{{asset('/')}}front/css/bootstrap.css" rel="stylesheet"/>
-    <link href="{{asset('/')}}front/css/bootstrap-responsive.css" rel="stylesheet"/>
-    <link href="{{asset('/')}}front/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-    <link href="{{asset('/')}}front/css/jcarousel.css" rel="stylesheet"/>
-    <link href="{{asset('/')}}front/css/flexslider.css" rel="stylesheet"/>
-    <link href="{{asset('/')}}front/css/style.css" rel="stylesheet"/>
-    <link href="{{asset('/')}}front/skins/default.css" rel="stylesheet"/>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="{{asset('/')}}front/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="{{asset('/')}}front/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="{{asset('/')}}front/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="{{asset('/')}}front/ico/apple-touch-icon-57-precomposed.png"/>
-    <link rel="shortcut icon" href="{{asset('/')}}front/ico/favicon.png"/>
-    <script src="{{asset('/')}}front/js/jquery.js"></script>
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
 
-    <style>
-        #wrapper {
-            position: relative;
-            top: 65px;
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 
-        }
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{{asset('/')}}front/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{{asset('/')}}front/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{{asset('/')}}front/css/bootstrap.css">
 
-        /*.footer {*/
-        /*background-color: #FDFE02;*/
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{asset('/')}}front/css/magnific-popup.css">
 
-        /*}*/
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="{{asset('/')}}front/css/flexslider.css">
 
-        .big_header {
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{{asset('/')}}front/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{asset('/')}}front/css/owl.theme.default.min.css">
 
-            top: 0px;
-            position: fixed;
-            width: 100%;
-            background-color: #FDFE02;
-            color: white;
-            font-size: 20px;
-            z-index: 2;
-            transition: all 0.3s ease;
-        }
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="{{asset('/')}}front/css/style.css">
 
-        /*.sticky_header {*/
-        /*font-size: 6px;*/
-        /*}*/
+    <!-- Modernizr JS -->
+    <script src="{{asset('/')}}front/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="{{asset('/')}}front/js/respond.min.js"></script>
+    <![endif]-->
 
-        .mydanger {
-            color: #fe1f28;
-        }
-
-    </style>
 </head>
-
 <body>
-<div id="wrapper">
 
-    <!-- toggle top area -->
-    <div class="hidden-top">
-        <div class="hidden-top-inner container">
-            <div class="row">
-                <div class="span12">
-                    <br/>
-                    <br/>
-                    <br/>
+<div class="colorlib-loader"></div>
 
-                        @foreach($address as $row)
-                           <strong>Our Course is available in any month</strong>
-                                {!! $row->address !!} <i class="icon-phone"> ({{$row->phone1}}) and ({{$row->phone2}})</i>
-
-
-
-                        @endforeach
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+<div id="page">
     @include('front.includes.header.header')
+
 
     @yield('body')
 
-    <footer class="myFooter">
-        @include('front.includes.footer')
-    </footer>
+    <div id="colorlib-instagram">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 colorlib-heading text-center">
+                <h2>Instagram</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="instagram-entry">
+                @foreach($students as $row)
+                    <a href="#" class="instagram text-center"
+                       style="background-image: url({{asset($row->image)}});">
+                    </a>
+                @endforeach
+
+                <a href="#" class="instagram text-center"
+                   style="background-image: url({{asset('/')}}front/images/gallery-2.jpg);">
+                </a>
+                <a href="#" class="instagram text-center"
+                   style="background-image: url({{asset('/')}}front/images/gallery-3.jpg);">
+                </a>
+                <a href="#" class="instagram text-center"
+                   style="background-image: url({{asset('/')}}front/images/gallery-4.jpg);">
+                </a>
+                <a href="#" class="instagram text-center"
+                   style="background-image: url({{asset('/')}}front/images/gallery-5.jpg);">
+                </a>
+                <a href="#" class="instagram text-center"
+                   style="background-image: url({{asset('/')}}front/images/gallery-6.jpg);">
+                </a>
+                <a href="#" class="instagram text-center"
+                   style="background-image: url({{asset('/')}}front/images/gallery-7.jpg);">
+                </a>
+                <a href="#" class="instagram text-center"
+                   style="background-image: url({{asset('/')}}front/images/gallery-8.jpg);">
+                </a>
+            </div>
+        </div>
+    </div>
+    @include('front.includes.footer')
+
+
 </div>
-<a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
-<script>
 
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
 
-    $(window).resize(function () {
-
-        // if ($(this).width() < 1024) {
-        //
-        //     // $('.myHider').hide();
-        //     //$('#sarjis').css("display", "none")
-        //
-        // } else {
-        //
-        //     $('#sarjis').css("display", "block")
-        //
-        // }
-        // if ($(this).width() < 1024) {
-        //
-        //     $('.myHider2').hide();
-        //
-        // } else {
-        //
-        //     $('.myHider2').show();
-        //
-        // }
-
-
-    });
-
-</script>
-<script src="{{asset('/')}}front/js/jquery.js"></script>
+<!-- jQuery -->
+<script src="{{asset('/')}}front/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
 <script src="{{asset('/')}}front/js/jquery.easing.1.3.js"></script>
-<script src="{{asset('/')}}front/js/bootstrap.js"></script>
-<script src="{{asset('/')}}front/js/jcarousel/jquery.jcarousel.min.js"></script>
-<script src="{{asset('/')}}front/js/jquery.fancybox.pack.js"></script>
-<script src="{{asset('/')}}front/js/jquery.fancybox-media.js"></script>
-<script src="{{asset('/')}}front/js/google-code-prettify/prettify.js"></script>
-<script src="{{asset('/')}}front/js/portfolio/jquery.quicksand.js"></script>
-<script src="{{asset('/')}}front/js/portfolio/setting.js"></script>
-<script src="{{asset('/')}}front/js/jquery.flexslider.js"></script>
-<script src="{{asset('/')}}front/js/jquery.nivo.slider.js"></script>
-<script src="{{asset('/')}}front/js/modernizr.custom.js"></script>
-<script src="{{asset('/')}}front/js/jquery.ba-cond.min.js"></script>
-<script src="{{asset('/')}}front/js/jquery.slitslider.js"></script>
-<script src="{{asset('/')}}front/js/animate.js"></script>
-
-<!-- Template Custom JavaScript File -->
-<script src="{{asset('/')}}front/js/custom.js"></script>
+<!-- Bootstrap -->
+<script src="{{asset('/')}}front/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="{{asset('/')}}front/js/jquery.waypoints.min.js"></script>
+<!-- Flexslider -->
+<script src="{{asset('/')}}front/js/jquery.flexslider-min.js"></script>
+<!-- Owl carousel -->
+<script src="{{asset('/')}}front/js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="{{asset('/')}}front/js/jquery.magnific-popup.min.js"></script>
+<script src="{{asset('/')}}front/js/magnific-popup-options.js"></script>
+<!-- Main -->
+<script src="{{asset('/')}}front/js/main.js"></script>
 
 </body>
 </html>
+

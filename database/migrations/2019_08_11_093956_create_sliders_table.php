@@ -19,6 +19,7 @@ class CreateSlidersTable extends Migration
             $table->string('last_title');
             $table->string('description');
             $table->text('image');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

@@ -3,64 +3,65 @@
 @extends('front.master')
 @section('title', 'Admission | Florence Nursing Center')
 @section('body')
-    <section id="inner-headline">
+    <div id="colorlib-container">
         <div class="container">
             <div class="row">
+                <div class="col-md-6">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Students Information</h3>
+                        </div>
+
+                        <form action="" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="card-body">
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">First Name</label>
+                                    <input type="text" required class="form-control" name="first_name">
+                                    <span class="text-danger">{{$errors->has('first_name')? $errors->First('first_name'): ''}}</span>
+
+                                </div><div class="form-group">
+                                    <label for="exampleInputEmail1">Last Name</label>
+                                    <input type="text" required class="form-control" name="last_name">
+                                    <span class="text-danger">{{$errors->has('last_name')? $errors->First('last_name'): ''}}</span>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Course Name</label>
+                                    <select type="number" required class="form-control" name="month_number">
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                    <span class="text-danger">{{$errors->has('month_number')? $errors->First('month_number'): ''}}</span>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Course Fee (per month)</label>
+                                    <input type="number" required class="form-control" name="fee">
+                                    <span class="text-danger">{{$errors->has('fee')? $errors->First('fee'): ''}}</span>
+
+                                </div>
+
+
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- /.card -->
+
+                </div>
 
             </div>
         </div>
-    </section>
-    <section id="content">
-        <div class="container">
-            <div class="row">
-                <div class="span8">
-                    <article>
-                        <div class="top-wrapper">
-                            <div class="post-heading">
-                                <h3><a href="#">This is an example of portfolio detail</a></h3>
-                            </div>
-                            <!-- start flexslider -->
-                            <div class="flexslider">
-                                <ul class="slides">
-                                    <li>
-                                        <img src="{{asset('/')}}front/img/works/full/image-01-full.jpg" alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="{{asset('/')}}front/img/works/full/image-02-full.jpg" alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="{{asset('/')}}front/img/works/full/image-03-full.jpg" alt="" />
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end flexslider -->
-                        </div>
-                        <p>
-                            Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
-                            ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed.
-                        </p>
-                    </article>
-                </div>
-                <div class="span4">
-                    <aside class="right-sidebar">
-                        <div class="widget">
-                            <h5 class="widgetheading">Project information</h5>
-                            <ul class="folio-detail">
-                                <li><label>Category :</label> Web design</li>
-                                <li><label>Client :</label> ASU Company</li>
-                                <li><label>Project date :</label> 26 March, 2013</li>
-                                <li><label>Project URL :</label><a href="#">www.projectsiteurl.com</a></li>
-                            </ul>
-                        </div>
-                        <div class="widget">
-                            <h5 class="widgetheading">Text widget</h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, unum suscipiantur te cum, vide magna ea eam. At eos wisi tractatos temporibus. Ne has omnis harum. Ei mea graece delenit nominati. Ut dolore albucius torquatos vel, choro gubergren no mel.
-                            </p>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 @endsection

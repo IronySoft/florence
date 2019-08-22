@@ -1,127 +1,97 @@
 @extends('front.master')
 @section('title', 'Contact | Florence Nursing Center')
 @section('body')
-
-    <section id="content">
-
-        {{--<div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Chawkbazar%2C%20Chittagong+(Florence%20Nursing%20Coaching%20Center)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/coordinates.html">gps coordinates</a></iframe></div><br />--}}
-
-        <section class="callaction">
-            <div class="container">
-                <div class="row">
-                    <div class="span12">
-                        <div class="big-cta">
-                            <div class="cta-text">
-                                <h3 >We have <b>{{count($branches)}}</b> Branches in <span class="highlight"><strong>Chattogram & Dhaka</strong></span>
-                                </h3>
-                            </div>
-                            <div class="cta floatright ">
-                                <a class="btn btn-large btn-theme btn-rounded" href="#">Visit our Branch</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div id="colorlib-container">
         <div class="container">
             <div class="row">
-                <div class="span12">
+                <div class="col-md-12">
+                    <iframe src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Chawkbazar%2C%20Chittagong+(Florence%20Nursing%20Coaching%20Center)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed"
+                            width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+
+
+                <div class="col-md-12">
                     <div class="row">
-                        @php($i=1)
-                        @foreach($branches as $branch)
-                            <div id="address{{$i++}}" class="span6">
-                                <div class="box aligncenter">
-                                    <div class="aligncenter icon">
-                                        <br/>
-                                        <h6 class="btn btn-large btn-theme btn-rounded"><b>{{$branch->title}}</b></h6>
+
+                        <div class="col-md-12">
+                            <h2 class="heading-2">Get In Touch</h2>
+                            <form action="#">
+                                <div class="row form-group">
+                                    <div class="col-md-6">
+                                        <label class="text text-info" for="fname">First Name</label>
+                                        <input type="text" id="fname" class="form-control" placeholder="Your firstname">
                                     </div>
-                                    <div class="text">
-
-                                        <p>
-                                            <b>
-                                                {!! $branch->address !!} <br/>
-                                                <i>{{$branch->phone1}},
-                                                    {{$branch->phone2}}
-                                                </i>
-                                            </b>
-
-                                        </p>
-                                        <a href="#">Email: {{$branch->email}}</a> <br/> <br/>
+                                    <div class="col-md-6">
+                                        <label for="lname">Last Name</label>
+                                        <input type="text" id="lname" class="form-control" placeholder="Your lastname">
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
 
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="email">Email</label>
+                                        <input type="text" id="email" class="form-control"
+                                               placeholder="Your email address">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" id="subject" class="form-control"
+                                               placeholder="Your subject of this message">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="message">Message</label>
+                                        <textarea name="message" id="message" cols="30" rows="10" class="form-control"
+                                                  placeholder="Say something about us"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Send Message" class="btn btn-primary">
+                                </div>
+
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <iframe src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Chawkbazar%2C%20Chittagong+(Florence%20Nursing%20Coaching%20Center)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed"
-                width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-        <div class="container">
-            <div class="row">
 
 
-                <div class="span12">
-                    <h1 class="text text-success">{{Session::get('message')}}</h1>
-                    <h4 class="text text-danger">Get in touch with us by filling <strong>contact form below</strong>
-                    </h4>
 
-                    <form action="{{route('contact.store')}}" method="post" role="form" class="contactForm">
+                @php($i=1)
+                    @foreach($branches as $row)
+                            <div class="col-md-6">
+                                <div class="blog-entry">
+                                    <div class="blog-img">
+                                        <a href="blog.html">
 
-                        @csrf
+                                            <iframe src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Chawkbazar%2C%20Chittagong+(Florence%20Nursing%20Coaching%20Center)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed"
+                                                    width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-                        <div class="row">
-                            <div class="span4 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                       data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>
-                                <span class="text-danger">{{$errors->has('name')? $errors->First('name'): ''}}</span>
+                                        </a>
+                                    </div>
+                                    <h1 class="text text-success ">Branch- {{$i++}} Contact Information</h1>
+                                    <h3>Phone: {{$row->phone1}}, {{$row->phone1}}</h3>
+                                    <h4>Email: {{$row->email}}</h4>
+                                    <p class="text text-warning">{!! $row->address !!}</p>
 
+                                </div>
                             </div>
-                            <div class="span4 form-group">
-                                <input type="email" class="form-control" name="email" id="email"
-                                       placeholder="Your Email" data-rule="email"
-                                       data-msg="Please enter a valid email"/>
-                                <span class="text-danger">{{$errors->has('email')? $errors->First('email'): ''}}</span>
 
-                            </div>
-                            <div class="span4 form-group">
-                                <input type="text" class="form-control" name="subject" id="subject"
-                                       placeholder="Subject" data-rule="minlen:4"
-                                       data-msg="Please enter at least 8 chars of subject"/>
-                                <span class="text-danger">{{$errors->has('subject')? $errors->First('subject'): ''}}</span>
+                    @endforeach
 
-                            </div>
-                            <div class="span12 margintop10 form-group">
-                                <textarea class="form-control" name="message" rows="12" data-rule="required"
-                                          data-msg="Please write something for us" placeholder="Message"></textarea>
-                                <span class="text-danger">{{$errors->has('message')? $errors->First('message'): ''}}</span>
-                                <p class="text-center">
-                                    <button class="btn btn-large btn-theme margintop10" type="submit">Submit message
-                                    </button>
-                                </p>
-                            </div>
-                        </div>
-                    </form>
+
                 </div>
+
+
+
             </div>
         </div>
 
 
-    </section>
 
-<script>
-
-    for(var i=1;i<=4;i++){
-        $("#address"+i).hover(function(){
-            $(this).css("background-color", "#FDFE02");
-        }, function(){
-            $(this).css("background-color", "#FFFFFF");
-        });
-
-    }
-
-</script>
 
 @endsection

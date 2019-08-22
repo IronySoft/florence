@@ -16,6 +16,7 @@ class CreateTextsTable extends Migration
         Schema::create('texts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('text');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

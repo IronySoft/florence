@@ -22,8 +22,9 @@ class ViewController extends Controller
         return view('front.home.index', [
             'sliders' => Slider::all(),
             'text' => Text::all()->where('id','=',1),
+            'blogs' => DB::table('blogs')->paginate(6),
             'projects' => DB::table('projects')->paginate(6),
-            'students' => DB::table('students')->get(),
+
 
             ]);
     }
@@ -53,6 +54,7 @@ class ViewController extends Controller
     {
         return view('front.about.index', [
             'abouts' => AboutUs::all(),
+            'texts' => Text::all(),
             'florenceTeams' => FlorenceTeam::all(),
             'goals' => MissionVision::all(),
 
@@ -61,7 +63,7 @@ class ViewController extends Controller
 
     public function courseIndex()
     {
-        return view('front.course.index',['courses' => Course::with('contents')->get()]);
+        return view('front.course.index',['courses' => Course::all()]);
     }
 
     public function testimonialIndex()

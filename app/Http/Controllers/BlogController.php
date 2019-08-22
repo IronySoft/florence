@@ -34,7 +34,10 @@ class BlogController extends Controller
         $imageName = time() . '_' . $image->getClientOriginalName();
         $directory = 'images/blog/';
         $imageUrl = $directory . $imageName;
-        Image::make($image)->resize(870, 350)->save($imageUrl);
+//        Image::make($image)->resize(870, 350)->save($imageUrl);
+        Image::make($image)->resize(800, 862)->save($imageUrl);
+
+        // here needs two image
 
         $row = new Blog();
         $row->writer = Auth::user()->name;

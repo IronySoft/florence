@@ -21,6 +21,7 @@ class CreateNoticesTable extends Migration
             $table->float('price');
             $table->string('location');
             $table->tinyInteger('type');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

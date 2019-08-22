@@ -78,7 +78,12 @@ class TextController extends Controller
      */
     public function destroy(Text $text)
     {
-        return redirect(route('text.index'))->with(['message' => 'New text added Successfully']);
+        $check = Text::findOrFail($text->id);
+        if (!is_null($check)) {
+            Text::destroy($text->id);
+            return redirect(route('text.index'))->with(['message' => 'Text DELETED Successfully']);
+        }
+        return redirect(route('text.index'))->with(['message' => 'Not Changed']);
 
     }
 }

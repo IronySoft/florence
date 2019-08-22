@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->text('description');
             $table->text('image');
             $table->text('large_image');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

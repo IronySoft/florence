@@ -19,6 +19,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('author_name');
             $table->string('designation');
             $table->text('image');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

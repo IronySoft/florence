@@ -8,7 +8,7 @@
                 <h3 class="card-title">Walking Text in front of Home Page</h3>
             </div>
 
-            <form action="{{route('text.store', ['text'=> $text->id])}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('text.update', ['text'=> $text->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="card-body">

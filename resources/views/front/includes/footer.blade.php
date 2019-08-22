@@ -1,64 +1,94 @@
-<div class="container ">
-    <div class="row ">
-
-
-        <div class="span8">
-            <div class="widget">
-                <h5 class="widgetheading">Browse pages </h5>
-                <p>বৃষ্টির দিনে বাইরে যেতে নিশ্চয়ই পানিরোধী স্মার্টফোনের কথা মনে হয়। কারণ, অনেক দামী স্মার্টফোন ভিজে নষ্ট হয়ে যেতে পারে। কিন্তু বাজারে এখন পানিরোধী (ওয়াটারপ্রুফ) ও পানি প্রতিরোধী
-
-                    <a href="http://www.focus.com.bd/page/1">More</a>
-                </p>
-            </div>
-        </div>
-
-
-       @foreach($address as $row)
-        <div class="span4">
-            <div class="widget">
-                <h5 class="widgetheading">{{$row->title}}</h5>
-                <address>
-                    <strong>{{$row->name}}</strong><br>
-                    {!! $row->address !!}<br>
-
-                </address>
-                <p>
-                    <i class="icon-phone"></i> ({{$row->phone1}}) - ({{$row->phone2}})<br>
-                    <i class="icon-envelope-alt"></i> {{$row->email}}
-                </p>
-            </div>
-        </div>
-           @endforeach
-    </div>
-</div>
-<div id="sub-footer">
+<footer id="colorlib-footer" role="contentinfo">
     <div class="container">
-        <div class="row">
-            <div class="span6">
-                <div class="copyright">
-                    <p>
-                        <span>&copy; Irony Soft - All right reserved.</span>
-                    </p>
-                    <div class="credits">
-                        <!--
-                          All the links in the footer should remain intact.
-                          You can delete the links only if you purchased the pro version.
-                          Licensing information: https://bootstrapmade.com/license/
-                          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Flattern
-                        -->
-                        Designed by <a href="https://ironysoft.com/">Irony Soft</a>
+        <div class="row row-pb-md">
+            <div class="col-md-3">
+                <h2>Navigational</h2>
+                <p>
+                <ul class="colorlib-footer-links">
+                    <li><a href="#"><i class="icon-check"></i> Home</a></li>
+                    <li><a href="#"><i class="icon-check"></i> About Me</a></li>
+                    <li><a href="#"><i class="icon-check"></i> Blog</a></li>
+                    <li><a href="#"><i class="icon-check"></i> Travel</a></li>
+                    <li><a href="#"><i class="icon-check"></i> Lifestyle</a></li>
+                    <li><a href="#"><i class="icon-check"></i> Fashion</a></li>
+                    <li><a href="#"><i class="icon-check"></i> Health</a></li>
+                </ul>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h2>Recent Post</h2>
+                <div class="f-blog">
+                    <a href="blog.html" class="blog-img" style="background-image: url({{asset('/')}}front/images/blog-1.jpg);">
+                    </a>
+                    <div class="desc">
+                        <h3><a href="blog.html">Be a designer</a></h3>
+                        <p class="admin"><span>25 March 2018</span></p>
+                    </div>
+                </div>
+                <div class="f-blog">
+                    <a href="blog.html" class="blog-img" style="background-image: url({{asset('/')}}front/images/blog-2.jpg);">
+                    </a>
+                    <div class="desc">
+                        <h3><a href="blog.html">How to build website</a></h3>
+                        <p class="admin"><span>24 March 2018</span></p>
+                    </div>
+                </div>
+                <div class="f-blog">
+                    <a href="blog.html" class="blog-img" style="background-image: url({{asset('/')}}front/images/blog-3.jpg);">
+                    </a>
+                    <div class="desc">
+                        <h3><a href="blog.html">Create website</a></h3>
+                        <p class="admin"><span>23 March 2018</span></p>
                     </div>
                 </div>
             </div>
-            <div class="span6">
-                <ul class="social-network">
-                    <li><a href="https://www.facebook.com/FNAC.ctg/" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-square"></i></a></li>
-                    <li><a href="https://www.facebook.com/FNAC.ctg/" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-square"></i></a></li>
-                    <li><a href="https://www.facebook.com/FNAC.ctg/" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-square"></i></a></li>
-                    <li><a href="https://www.facebook.com/FNAC.ctg/" data-placement="bottom" title="Pinterest"><i class="icon-pinterest icon-square"></i></a></li>
-                    <li><a href="https://www.facebook.com/FNAC.ctg/" data-placement="bottom" title="Google plus"><i class="icon-google-plus icon-square"></i></a></li>
+            <div class="col-md-3">
+                <h2>Archive</h2>
+                <p>
+                <ul class="colorlib-footer-links">
+                    <li><a href="#"><i class="icon-check"></i> February 2018</a></li>
+                    <li><a href="#"><i class="icon-check"></i> January 2018</a></li>
+                    <li><a href="#"><i class="icon-check"></i> December 2017</a></li>
+                    <li><a href="#"><i class="icon-check"></i> November 2017</a></li>
+                    <li><a href="#"><i class="icon-check"></i> October 2017</a></li>
+                    <li><a href="#"><i class="icon-check"></i> September 2017</a></li>
                 </ul>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h2>Tags</h2>
+                <p class="tags">
+                    <span><a href="#"><i class="icon-tag"></i> Modeling</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Fashion</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Life</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Blog</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Workout</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Vacation</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Travel</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Exercise</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Health</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> News</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Model</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Women</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Animals</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Nature</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Art</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Sea</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Ocean</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Office</a></span>
+                    <span><a href="#"><i class="icon-tag"></i> Home</a></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <small class="block"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small>
+                    <small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+                </p>
             </div>
         </div>
     </div>
-</div>
+</footer>

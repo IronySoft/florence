@@ -101,7 +101,28 @@
             })
             .catch(function (error) {
                 console.error(error)
+            });ClassicEditor
+            .create(document.querySelector('#editor3'))
+            .then(function (editor) {
+                // The editor instance
             })
+            .catch(function (error) {
+                console.error(error)
+            });ClassicEditor
+            .create(document.querySelector('#editor4'))
+            .then(function (editor) {
+                // The editor instance
+            })
+            .catch(function (error) {
+                console.error(error)
+            });ClassicEditor
+            .create(document.querySelector('#editor5'))
+            .then(function (editor) {
+                // The editor instance
+            })
+            .catch(function (error) {
+                console.error(error)
+            });
 
         // bootstrap WYSIHTML5 - text editor
 
